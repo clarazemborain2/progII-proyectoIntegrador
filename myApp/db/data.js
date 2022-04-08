@@ -1,4 +1,18 @@
-let phones = {
+
+
+let data = {
+
+usuario: {
+    email: 'taylorswiftie2002@gmail.com',
+    usuario: 'Taylor Swift',
+    contraseña: 'delfin123',
+    fechaDeNacimiento: '13/12/1989',
+    nrDeDocumento: 30788967,
+    fotoDePerfil: './images/users/taylor.jpeg',
+
+
+}, 
+
     lista : [
     {
         marca : "apple",
@@ -40,4 +54,4 @@ let phones = {
     ]
 }
 
-module.exports = phones;
+module.exports = data;
