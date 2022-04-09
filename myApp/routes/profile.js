@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let perfilController = require('../controllers/perfilController');
+let perfilController = require('../controllers/profileController');
 
 router.get('/', perfilController.perfil);
 

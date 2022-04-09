@@ -19,7 +19,7 @@ usuario: {
         modelo: "iPhone 11",
         anio: 2020,
         color: "negro",
-        imagen: ''
+        imagen: '',
     },
     {   
          marca : "apple",
