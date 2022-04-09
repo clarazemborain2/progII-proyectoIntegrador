@@ -4,12 +4,10 @@ let perfilController = require('../controllers/perfilController');
 
 router.get('/', perfilController.perfil);
 
-router.get('', perfilController.);
+router.get('/profile-edit', perfilController.editarPerfil);
 
-router.get('', perfilController.); 
+router.get('/login', perfilController.login); 
 
-router.get('', perfilController.); 
-
-router.get('', perfilController.); 
+router.get('/register', perfilController.register); 
 
 module.exports = router;
