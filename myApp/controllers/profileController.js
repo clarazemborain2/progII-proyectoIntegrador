@@ -1,6 +1,11 @@
+const dataModule = require('../db/data')
+
 let perfilController = {
+
     perfil : function(req, res) {
-         res.render('profile');
+         res.render('profile',  {
+            usuario: dataModule.usuario,
+            productos: dataModule.lista});
        },
     editarPerfil : function(req, res) {
         res.render('profile-edit');

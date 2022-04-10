@@ -1,12 +1,14 @@
+const data = require('../db/data')
+
 let productoController = {
     producto : function(req, res) {
-         res.render('product');
+         res.render('product', {
+             comentarios: data.comentarios,
+             producto: data.lista
+         });
        },
     productAdd : function(req, res) {
         res.render('product-add');
-    },
-    productEdit : function(req, res) {
-        res.render('product-edit');
     },
  }
  
