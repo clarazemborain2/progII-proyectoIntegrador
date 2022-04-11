@@ -4,13 +4,13 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
+  --yellow: #e96bd8;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
-  --gray: #666666;
-  --light-gray: #ebebeb;
+  --gray: #130314;
+  --light-gray: #e9b6ec;
   --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  --base-font-family: "Papyrus", serif
 }
 
 
@@ -51,7 +51,7 @@ figure {
 }
 
 img {
-  width: 100%;
+  width: 70%;
 }
 
 input,
@@ -154,7 +154,7 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url(/images/banner-agua.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

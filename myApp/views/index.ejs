@@ -8,11 +8,9 @@
 	<!-- /Header -->
 	<%- include('./partials/header')  %> ;
 	
-	<!-- Banner -->
+	<!-- Banner se muestra en css-->
 	<div class="banner">
-		<img src="images/img-home-banner.jpg" alt="Banner de ofertas">
-	</div>
-	<!-- /Banner -->
+		 </div>
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
@@ -26,7 +24,7 @@
 	<section class="product-box">
 		<a href="/product">
 			<figure class="product-box_image">
-				<img src=<%=productos[i].imagen%> > alt="cafetera moulinex">
+				<img src=<%=productos[i].imagen%>  alt="cafetera moulinex">
 			</figure>
 			<article class="product-box_data">
 				<h2><%=productos[i].nombre%></h2>
@@ -53,7 +51,7 @@
 					<section class="product-box">
 						<a href="/product">
 							<figure class="product-box_image">
-								<img src="images/products/default-image.png" alt="cafetera moulinex">
+								<img src=<%=productos[i].imagen%>  alt="cafetera moulinex">
 							</figure>
 							<article class="product-box_data">
 								<h2><%=productos[i].nombre%></h2>

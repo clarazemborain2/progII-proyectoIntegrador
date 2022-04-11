@@ -29,7 +29,7 @@ usuario: {
         descripcion: "Es el kit más utilizado para la protección.",
         fechaEntrega: "09/10/2022",
         comentarios: 58,
-        imagen: './images/products/feKit'
+        imagen: './images/products/feKit.jpg'
     },
     {
         nombre: "Cuarzo rosa",
