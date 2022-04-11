@@ -18,74 +18,74 @@ usuario: {
 
     lista : [
     {
-        nombre: "iPhone 12",
-        descripcion: "celular marca Apple. Modelo 2021. Color negro",
+        nombre: "Kit cristales",
+        descripcion: "Contiene 10 cristales seleccionados!",
         fechaEntrega: "09/10/2022",
         comentarios: 90,
-        imagen: './images/users/default-image.png'
+        imagen: './images/products/kit.jpg'
     },
     {   
-        nombre: "iPhone 13 Max",
-        descripcion: "celular marca Apple. Modelo 2022. Color negro",
+        nombre: "Kit de fe",
+        descripcion: "Es el kit más utilizado para la protección.",
         fechaEntrega: "09/10/2022",
         comentarios: 58,
-        imagen: './images/users/default-image.png'
+        imagen: './images/products/feKit'
     },
     {
-        nombre: "iPhone 8 Plus",
-        descripcion: "celular marca Apple. Modelo 2019. Color negro",
+        nombre: "Cuarzo rosa",
+        descripcion: "Trabaja la paz, el amor en todas sus formas y tu mundo emocional.",
         fechaEntrega: "09/10/2022",
         comentarios: 10,
-        imagen: ''
+        imagen: './images/products/cuarzorosa.jpg'
     },
     {
-        nombre: "iPhone 11 Pro",
-        descripcion: "celular marca Apple. Modelo 2019. Color negro",
+        nombre: "Amatista",
+        descripcion: "Es un cristal transmutador de energía.",
         fechaEntrega: "09/10/2022",
         comentarios: 38,
-        imagen: ''
+        imagen: './images/products/amatista.jpg'
     },
     {
-        nombre: "iPhone 12 Pro Max",
-        descripcion: "celular marca Apple. Modelo 2021. Color negro",
+        nombre: "Bolsita de sanación: amor",
+        descripcion: "trabajar y conectar con la energía del amor en todas sus formas.",
         fechaEntrega: "09/10/2022",
         comentarios: 30,
-        imagen: ''
+        imagen: './images/products/bolsitaAmor.jpg'
     },
     {
-        nombre: "iPhone 11 Mini",
-        descripcion: "celular marca Apple. Modelo 2019. Color negro",
+        nombre: "Obsidiana",
+        descripcion: "nos enfrenta a mirar nuestros miedos, angustias y temores.",
         fechaEntrega: "09/10/2022",
         comentarios: 11,
-        imagen: ''
+        imagen: './images/products/obsidiana.jpg'
     },
     {
-        nombre: "iPhone X",
-        descripcion: "celular marca Apple. Modelo 2018. Color negro",
+        nombre: "jaspe rojo",
+        descripcion: "aferrate a el cuando necesites transformar todo en acción.",
         fechaEntrega: "09/10/2022",
         comentarios: 99,
-        imagen: ''
+        imagen: './images/products/rojo.jpg'
     },
     {
-        nombre: "iPhone 13",
-        descripcion: "celular marca Apple. Modelo 2022. Color negro",
+        nombre: "dije cristal mini",
+        descripcion: "Llevá el poder de los cristales con vos. ",
         fechaEntrega: "09/10/2022",
         comentarios: 44,
-        imagen: ''
+        imagen: './images/products/dije.jpg'
     },
     {
-        nombre: "iPhone 11",
-        descripcion: "celular marca Apple. Modelo 2020. Color blanco",
+        nombre: "Citrino",
+        descripcion: "Este cristal es ideal para estimular tu confianza.",
         fechaEntrega: "09/10/2022",
         comentarios: 12,
-        imagen: ''
+        imagen: './images/products/cuarzoNaranja.jpg'
     },
     {
-        nombre: "iPhone 10",
-        descripcion: "celular marca Apple. Modelo 2019. Color negro",
+        nombre: "Sodalita",
+        descripcion: "Este cristal trabaja el inconsciente y el mundo mental.",
         fechaEntrega: "09/10/2022",
         comentarios: 22,
-        imagen: ''
+        imagen: './images/products/sodalita.jpg'
     }
 
     ],
