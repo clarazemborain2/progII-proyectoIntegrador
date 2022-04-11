@@ -18,6 +18,7 @@ usuario: {
 
     productos : [
     {
+        id: 1,
         nombre: "Kit cristales",
         descripcion: "Contiene 10 cristales seleccionados!",
         fechaEntrega: "09/10/2022",
@@ -25,6 +26,7 @@ usuario: {
         imagen: './images/products/kit.jpg'
     },
     {   
+        id: 2,
         nombre: "Kit de fe",
         descripcion: "Es el kit más utilizado para la protección.",
         fechaEntrega: "09/10/2022",
@@ -32,6 +34,7 @@ usuario: {
         imagen: './images/products/feKit.jpg'
     },
     {
+        id: 3,
         nombre: "Cuarzo rosa",
         descripcion: "Trabaja la paz, el amor en todas sus formas y tu mundo emocional.",
         fechaEntrega: "09/10/2022",
@@ -39,6 +42,7 @@ usuario: {
         imagen: './images/products/cuarzorosa.jpg'
     },
     {
+        id: 4,
         nombre: "Amatista",
         descripcion: "Es un cristal transmutador de energía.",
         fechaEntrega: "09/10/2022",
@@ -46,6 +50,7 @@ usuario: {
         imagen: './images/products/amatista.jpg'
     },
     {
+        id: 5,
         nombre: "Bolsita de sanación: amor",
         descripcion: "trabajar y conectar con la energía del amor en todas sus formas.",
         fechaEntrega: "09/10/2022",
@@ -53,6 +58,7 @@ usuario: {
         imagen: './images/products/bolsitaAmor.jpg'
     },
     {
+        id: 6,
         nombre: "Obsidiana",
         descripcion: "nos enfrenta a mirar nuestros miedos, angustias y temores.",
         fechaEntrega: "09/10/2022",
@@ -60,6 +66,7 @@ usuario: {
         imagen: './images/products/obsidiana.jpg'
     },
     {
+        id: 7,
         nombre: "jaspe rojo",
         descripcion: "aferrate a el cuando necesites transformar todo en acción.",
         fechaEntrega: "09/10/2022",
@@ -67,6 +74,7 @@ usuario: {
         imagen: './images/products/rojo.jpg'
     },
     {
+        id: 8,
         nombre: "dije cristal mini",
         descripcion: "Llevá el poder de los cristales con vos. ",
         fechaEntrega: "09/10/2022",
@@ -74,6 +82,7 @@ usuario: {
         imagen: './images/products/dije.jpg'
     },
     {
+        id: 9,
         nombre: "Citrino",
         descripcion: "Este cristal es ideal para estimular tu confianza.",
         fechaEntrega: "09/10/2022",
@@ -81,6 +90,7 @@ usuario: {
         imagen: './images/products/cuarzoNaranja.jpg'
     },
     {
+        id: 10,
         nombre: "Sodalita",
         descripcion: "Este cristal trabaja el inconsciente y el mundo mental.",
         fechaEntrega: "09/10/2022",
