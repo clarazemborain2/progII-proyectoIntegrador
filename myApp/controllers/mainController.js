@@ -5,7 +5,7 @@ const data = require("../db/data");
 let mainController = {
    index: function(req, res) {
         res.render('index', {
-          productos: data.lista,
+          productos: data.productos,
         });
       },
     

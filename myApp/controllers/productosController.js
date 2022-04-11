@@ -4,7 +4,7 @@ let productoController = {
     producto : function(req, res) {
          res.render('product', {
              comentarios: data.comentarios,
-             producto: data.lista
+             producto: data.productos
          });
        },
     productAdd : function(req, res) {

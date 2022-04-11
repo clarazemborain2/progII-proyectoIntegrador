@@ -16,7 +16,7 @@ usuario: {
 
 }, 
 
-    lista : [
+    productos : [
     {
         nombre: "Kit cristales",
         descripcion: "Contiene 10 cristales seleccionados!",
