@@ -5,7 +5,7 @@ let perfilController = {
     perfil : function(req, res) {
          res.render('profile',  {
             usuario: dataModule.usuario,
-            productos: dataModule.lista});
+            productos: dataModule.productos});
        },
     editarPerfil : function(req, res) {
         res.render('profile-edit');
