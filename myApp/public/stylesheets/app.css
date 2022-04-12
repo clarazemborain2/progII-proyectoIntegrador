@@ -11,6 +11,7 @@
   --light-gray: #e9b6ec;
   --green: #39b54a;
   --base-font-family: "Papyrus", serif;
+  --alt-font-family: "Lucida Handwriting", serif;
 }
 
 
@@ -56,7 +57,7 @@ img {
 
 input,
 textarea {
-  font-family: inherit;
+  font-family: var(--base-font-family);
 }
 
 hr {
@@ -74,12 +75,14 @@ hr {
 .main-header_home-link,
 .main-header_credit-link {
   display: block;
+  font-family: var(--alt-font-family);
 }
 
 .main-header_credit-link {
   font-size: 1.5em;
   margin-top: 20px;
   text-align: center;
+  font-family: var(--alt-font-family);
 }
 
 .search-form {
@@ -96,6 +99,7 @@ hr {
   border-radius: 3px;
   height: 40px;
   font-size: 1.5em;
+  font-family: var(--alt-font-family);
 }
 
 .search-form_button {
@@ -191,7 +195,7 @@ hr {
 }
 
 .product-box_data {
-  padding: 15px;
+  padding: 20px;
   position: relative;
   display: flex;
   align-items: center;
@@ -325,6 +329,7 @@ hr {
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
   line-height: 1.5;
+  font-family: var(--alt-font-family);
 }
 
 .product-detail-price {
@@ -418,6 +423,7 @@ hr {
 .comments p{
   font-size: 1.5em;
   margin-top: 0;
+  font-family: var(--alt-font-family);
 }
 .comments .user{
   font-size: 1.7em;
