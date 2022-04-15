@@ -8,7 +8,9 @@ let perfilController = {
             productos: dataModule.productos});
        },
     editarPerfil : function(req, res) {
-        res.render('profile-edit');
+        res.render('profile-edit', {
+            usuario: dataModule.usuario}
+           );
     },
     login : function(req, res) {
         res.render('login');

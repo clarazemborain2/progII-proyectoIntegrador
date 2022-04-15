@@ -28,7 +28,7 @@ usuario: {
     {   
         id: 2,
         nombre: "Kit de fe",
-        descripcion: "Es el kit más utilizado para la protección.",
+        descripcion: "Es el kit más utilizado para la protección. Contiene piedras de las 7 chacras en tamaño mini y un spray de agua florida",
         fechaEntrega: "09/10/2022",
         comentarios: 58,
         imagen: './images/products/feKit.jpg'
@@ -51,7 +51,7 @@ usuario: {
     },
     {
         id: 5,
-        nombre: "Bolsita de sanación: amor",
+        nombre: "Bolsita de sanación",
         descripcion: "trabajar y conectar con la energía del amor en todas sus formas.",
         fechaEntrega: "09/10/2022",
         comentarios: 30,
@@ -67,7 +67,7 @@ usuario: {
     },
     {
         id: 7,
-        nombre: "jaspe rojo",
+        nombre: "Jaspe rojo",
         descripcion: "aferrate a el cuando necesites transformar todo en acción.",
         fechaEntrega: "09/10/2022",
         comentarios: 99,
@@ -75,7 +75,7 @@ usuario: {
     },
     {
         id: 8,
-        nombre: "dije cristal mini",
+        nombre: "Dije cristal mini",
         descripcion: "Llevá el poder de los cristales con vos. ",
         fechaEntrega: "09/10/2022",
         comentarios: 44,
@@ -102,15 +102,15 @@ usuario: {
     comentarios: [
         {
             nombreUsuario: 'Pilar Sauthier',
-            comentario: 'Excelente producto!',
+            comentario: 'Excelente kit! Lo llevo conmigo siempre para protección',
         },
         {
             nombreUsuario: 'Ana Lucky',
-            comentario: 'muy bueno!',
+            comentario: 'Muy bueno para la cartera!',
         },
         {
             nombreUsuario: 'Mar Levy',
-            comentario: 'Que lindo!',
+            comentario: 'Excelente negocio y la atención siempre genial',
         },
         {
             nombreUsuario: 'Blake Johns',
@@ -118,7 +118,7 @@ usuario: {
         },
         {
             nombreUsuario: 'Teo Pla',
-            comentario: 'Wow!',
+            comentario: 'La mejor protección',
         }
 
     ]

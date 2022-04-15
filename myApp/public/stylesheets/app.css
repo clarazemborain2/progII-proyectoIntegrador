@@ -11,7 +11,7 @@
   --light-gray: #e9b6ec;
   --green: #39b54a;
   --base-font-family: "Papyrus", serif;
-  --alt-font-family: "Lucida Handwriting", serif;
+  --alt-font-family: "Lucida Handwriting", cursive;
 }
 
 
@@ -483,6 +483,10 @@ textarea.form-input {
   border-radius: 4px;
   color: #fff;
 }
+/*== Formularios ====*/
+
+
+
 
 
 /*====== Media-Queries ======*/
