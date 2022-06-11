@@ -7,7 +7,7 @@ let resultsController = {
      productos.findOne({
          where: [
              {nombre : {
-                 [op.like] : "%" + busqueda + ""
+                 [op.like] : "%" + busqueda + "%"
              }} /*op.like no funciona*/
          ]
      }).then((result) => {
