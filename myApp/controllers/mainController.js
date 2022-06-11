@@ -1,3 +1,4 @@
+const Productos = require("../database/models/Productos");
 const { productos } = require("../db/data");
 const data = require("../db/data");
 
