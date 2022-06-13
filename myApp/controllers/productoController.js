@@ -1,4 +1,4 @@
-const data = require('../db/data')
+//const data = require('../db/data')// no sirve 
 
 let productoController = {
     producto : function(req, res) {
