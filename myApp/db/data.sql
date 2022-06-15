@@ -1,3 +1,5 @@
+CREATE SCHEMA `data` ;
+
 USE data;
 
 CREATE TABLE usuario (
@@ -29,3 +31,7 @@ CREATE TABLE `data`.`comentarios` (
   `nombreUsuario` VARCHAR(100) NOT NULL,
   `comentario` VARCHAR(200) NULL,
   PRIMARY KEY (`nombreUsuario`));
+
+INSERT INTO `data`.`usuario` (`email`, `usuario`, `contrasenia`, `fechaDeNacimiento`, `nroDeDocumento`, `fotoDePerfil`, `seguidores`, `Comentarios`, `productos`) VALUES ('fgalluzzo@udesa.edu', 'galu', '123', '2016-08-02', '4412', ':0', '2', '0', '12');
+INSERT INTO `data`.`usuario` (`email`, `usuario`, `contrasenia`, `fechaDeNacimiento`, `nroDeDocumento`, `fotoDePerfil`, `seguidores`, `Comentarios`, `productos`) VALUES ('clari@udesa.edu', 'galu', '123', '2016-08-02', '4412', ':0', '2', '0', '12');
+
