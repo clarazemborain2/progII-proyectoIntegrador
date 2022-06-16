@@ -1,7 +1,7 @@
 const { dataTypes } = require("sequelize/types");
 
 module.exports = function(sequelize, dataTypes){
-    let alias = 'producto';
+    let alias = 'Producto';
     let cols = {
         id: {
             autoIncrement: true,
@@ -14,9 +14,7 @@ module.exports = function(sequelize, dataTypes){
         descripicion:{
             type: dataTypes.STRING,
         },
-        fechaDeEntrega:{
-            type: dataTypes.DATE,
-        },
+        
         comentarios:{
             type: dataTypes.INTEGER,
         },
@@ -25,7 +23,7 @@ module.exports = function(sequelize, dataTypes){
         },
     }
     let config = {
-        tableName: 'productos',
+        tableName: 'producto',
         timestamps: false,
         underscored: true,
     }
