@@ -11,7 +11,7 @@ let resultsController = {
              }} /*op.like no funciona*/
          ]
      }).then((result) => {
-         return res.send(result);
+         return res.render('search-results'), {/*falta completar*/}
      })
  }
 
