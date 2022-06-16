@@ -1,4 +1,4 @@
-//const dataModule = require('../db/data')// no sirve mas
+const dataModule = require('../db/data')// no sirve mas
 
 let perfilController = {
 
@@ -16,12 +16,17 @@ let perfilController = {
         res.render('login');
     },
     procesarLogin : function(req, res) {
-         
+         console.log(req.body);
+         res.redirect("/profile")
     },
 
     register : function(req, res) {
         res.render('register');
     },
+    procesarRegister : function(req, res) {
+        console.log(req.body)
+        res.redirect('/')
+    }
  }
  
  module.exports = perfilController

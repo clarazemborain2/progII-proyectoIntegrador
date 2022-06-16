@@ -1,6 +1,6 @@
 //const Productos = require("../database/models/Productos");// esto sirve
 //const { productos } = require("../db/data");//
-//const data = require("../db/data");//
+const data = require("../db/data");//
 
 let mainController = {
    index: function(req, res) {

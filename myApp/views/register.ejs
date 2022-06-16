@@ -19,18 +19,17 @@
 			<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
 			<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 			
-			<div class="testbox">
-			  <h1>Registration</h1>
-			
-			  <form action="/">
-				  <hr>
-				<div 
-			
-			   <a class="button">Register</a>
-			  </form>
-			</div><!-- tab-content -->
-				
-		  </div> <!-- /form -->
+			<div class="form">
+				<form  action="/profile/register" method="POST"> 
+				  <input type="text" name="nombre" placeholder="nombre de usuario">
+				  <input type="text" name="email" placeholder="mail"/>
+				  <input type="password" name="password" placeholder="contraseña"/>
+				  <input type="date" name="fecha" placeholder="fecha de nacimiento">
+				  <input type="number" name="dni" placeholder="nro de documento">
+				  <input type="file" name="foto" placeholder="foto de perfil">
+				  <button type="submit">Ingresar</button>
+				</form>
+		  </div>	
 
 	<!-- footer -->
 	<%- include('./partials/footer') %> 

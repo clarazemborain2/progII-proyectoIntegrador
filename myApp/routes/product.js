@@ -5,6 +5,7 @@ let productoController = require('../controllers/productoController');
 router.get('/:id', productoController.producto);
 
 router.get('/add', productoController.productAdd);
+router.post('/add', productoController.procesarAdd);
 
 
 

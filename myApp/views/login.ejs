@@ -16,16 +16,14 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			
-			<div class="login-page">
-				<div class="form">
-				  <form class="register-form" action="/profile/login" method="POST"> 
-					<input type="text" placeholder="name"/> 
-					<input type="password" placeholder="password"/>
-					<input type="text" placeholder="email address"/>
-					<button type="submit"><a href="/profile">Ingresar</a></button>
-			
+			<div class="form">
+				  <form  action="/profile/login" method="POST"> 
+					<input type="text" name="email" placeholder="email address"/>
+					<input type="password" name="password" placeholder="password"/>
+					<button type="submit">Ingresar</button>
+					<label for="recordar">Recordarme</label>
+					<input type="checkbox" name="recordar"> 
 				  </form>
-				</div>	  
 			</div>	
 
 
