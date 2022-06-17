@@ -1,4 +1,4 @@
-const dataModule = require('../db/data')// no sirve mas
+const db = require("../database/models");
 
 let perfilController = {
 

@@ -20,16 +20,14 @@ let productoController = {
       imagen: info.imagen
     }
 
-    Producto.create(
-      productoNuevo
-    )
+    Producto.create(productoNuevo)
     .then((result) => {
       return res.redirect("/index")
     })
     }
-    
 }
-
+  
+ 
  module.exports = productoController
 
 

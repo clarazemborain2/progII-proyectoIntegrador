@@ -24,7 +24,7 @@ module.exports = function(sequelize, dataTypes){
         foto_de_perfil: {
             type: dataTypes.STRING
         }
-    }};
+    };
     let config = {
         tableName: "usuario",
         timestamps: true,
@@ -32,3 +32,4 @@ module.exports = function(sequelize, dataTypes){
     }
     const Usuario = sequelize.define(alias, cols, config);
     return Usuario;
+}
