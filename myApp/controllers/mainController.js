@@ -4,6 +4,7 @@ let mainController = {
    index: function(req, res) {
         Producto.findAll()
         .then(result=>{
+          console.log(result);
           return res.render('index', {productos: result})
         })
         .catch(err=>{
