@@ -2,9 +2,9 @@ module.exports = function(sequelize, dataTypes){
     let alias = 'Usuario';
     let cols = {
         id: {
+            type: dataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
-            type: dataTypes.INTEGER,
         },
         email: {
             type: dataTypes.STRING
@@ -12,7 +12,7 @@ module.exports = function(sequelize, dataTypes){
         usuario: {
             type: dataTypes.STRING
         },
-        constrasenia: {
+        contra: {
             type: dataTypes.STRING
         },
         fecha_de_nacimiento: {
@@ -27,7 +27,7 @@ module.exports = function(sequelize, dataTypes){
     };
     let config = {
         tableName: "usuario",
-        timestamps: true,
+        timestamps: false,
         underscore: true,
     }
     const Usuario = sequelize.define(alias, cols, config);

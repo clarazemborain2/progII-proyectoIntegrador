@@ -23,19 +23,21 @@ let perfilController = {
         res.render('register');
     },
     procesarRegister : function(req, res) {
+        console.log(req.file);
         let usuarioNuevo = {
             email: req.body.email,
-            usuario: req.body.nombre,
-            contrasenia: req.body.contrasenia,
-            fecha_de_nacimiento: req.body.fecha_de_nacimiento,
+            usuario: req.body.usuario,
+            contra: req.body.contra,
+            fecha_de_nacimiento: req.body.fecha,
             nro_de_documento: req.body.nro_de_documento,
-            foto_de_perfil: req.body.foto_de_perfil,
+            foto_de_perfil: 1,
         }
+        console.log(usuarioNuevo)
         db.Usuario.create(usuarioNuevo)
         .then(function (results) {
-            return res.redirect('/profile')
+            return res.redirect('/')
         }
-        )
+        ).catch((err) => console.log(err))
        
     }
  }
