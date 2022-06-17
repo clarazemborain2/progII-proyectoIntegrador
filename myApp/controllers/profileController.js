@@ -1,4 +1,5 @@
 const db = require("../database/models");
+let bcrypt = require('bcryptjs');
 
 let perfilController = {
 
@@ -16,21 +17,20 @@ let perfilController = {
         res.render('login');
     },
     procesarLogin : function(req, res) {
-         console.log(req.body);
-         res.redirect("/profile")
+
     },
     register : function(req, res) {
         res.render('register');
     },
     procesarRegister : function(req, res) {
-        console.log(req.file);
+        ;
         let usuarioNuevo = {
             email: req.body.email,
             usuario: req.body.usuario,
-            contra: req.body.contra,
+            contra: bcrypt.hashSync(req.body.contra, 10),
             fecha_de_nacimiento: req.body.fecha,
             nro_de_documento: req.body.nro_de_documento,
-            foto_de_perfil: 1,
+            foto_de_perfil: req.body.foto,
         }
         console.log(usuarioNuevo)
         db.Usuario.create(usuarioNuevo)
