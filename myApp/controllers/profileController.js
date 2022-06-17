@@ -19,7 +19,6 @@ let perfilController = {
          console.log(req.body);
          res.redirect("/profile")
     },
-
     register : function(req, res) {
         res.render('register');
     },

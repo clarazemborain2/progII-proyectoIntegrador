@@ -19,7 +19,6 @@ CREATE TABLE producto (
   nombre VARCHAR(100) NOT NULL,
   descripcion VARCHAR(150) NOT NULL,
   fechaEntrega DATETIME NOT NULL,
-  comentarios INT NULL,
   imagen VARCHAR(400) NOT NULL,
   usuario_id INT UNSIGNED NOT NULL,
   FOREIGN KEY (usuario_id) REFERENCES usuario(id)

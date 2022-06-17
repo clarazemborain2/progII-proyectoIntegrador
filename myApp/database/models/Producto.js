@@ -1,5 +1,3 @@
-const { dataTypes } = require("sequelize/types");
-
 module.exports = function(sequelize, dataTypes){
     let alias = 'Producto';
     let cols = {
@@ -13,10 +11,6 @@ module.exports = function(sequelize, dataTypes){
         },
         descripicion:{
             type: dataTypes.STRING,
-        },
-        
-        comentarios:{
-            type: dataTypes.INTEGER,
         },
         imagen:{
             type: dataTypes.STRING,
