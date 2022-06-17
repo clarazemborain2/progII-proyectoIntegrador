@@ -27,9 +27,9 @@ let productoController = {
       return res.redirect("/index")
     })
     }
+    
 }
-  
- 
+
  module.exports = productoController
 
 

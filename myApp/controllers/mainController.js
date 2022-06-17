@@ -1,15 +1,11 @@
-//const Productos = require("../database/models/Productos");// esto sirve
-//const { productos } = require("../db/data");//
-const data = require("../db/data");//
+const Producto = require("../database/models/Producto");// esto sirve
+
 
 let mainController = {
    index: function(req, res) {
-        res.render('index', {
-          productos: data.productos,
-        });
-        productos.findAll()
-        .then(data=>{
-          return res.send(data)
+        Producto.findAll()
+        .then(result=>{
+          return res.render('index', {Producto: result})
         })
         .catch(err=>{
           return res.send(err)
