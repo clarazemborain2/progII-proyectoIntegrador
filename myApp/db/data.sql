@@ -8,17 +8,17 @@ id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 email	 VARCHAR(50) 		NOT NULL,
 usuario	 VARCHAR(50) 		NOT NULL,
 contrasenia	 VARCHAR(50) 	NOT NULL,
-fechaDeNacimiento	DATE	NOT NULL,
-nroDeDocumento	 INT 	NOT NULL,
-fotoDePerfil	 VARCHAR(300)
+fecha_de_nacimiento	DATE	NOT NULL,
+nro_de_documento	 INT 	NOT NULL,
+foto_de_perfil	 VARCHAR(300)
 );
 
 
 CREATE TABLE producto (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
   nombre VARCHAR(100) NOT NULL,
-  descripcion VARCHAR(150) NOT NULL,
-  fechaEntrega DATETIME NOT NULL,
+  descripcion VARCHAR(500) NOT NULL,
+  fecha_entrega DATETIME NOT NULL,
   imagen VARCHAR(400) NOT NULL,
   usuario_id INT UNSIGNED NOT NULL,
   FOREIGN KEY (usuario_id) REFERENCES usuario(id)
