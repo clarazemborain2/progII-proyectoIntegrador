@@ -24,8 +24,59 @@ let productoController = {
     .then((result) => {
       return res.redirect("/index")
     })
+    },
+    edit: (req, res)=>{
+    let id = req.params.id;
+    Producto.findByPk(id)
+    .then(
+      (result)=>{
+        let productoEditado={
+
+      nombre: result.nombre,
+      descripcion: result.descripcion,
+      imagen: result.imagen,
+      id:id
+
+        }
+      return res.render('productEdit', {Producto: productoEditado})
+
+
+
+       }
+    )
+    },
+    update: (req,res)=>{
+      let productUpdate = req.body;
+      let id = req.params.id;
+      Producto.update(
+        {
+            nombre: productUpdate.nombreProducto,
+            descripcion: productUpdate.descripcion,
+            imagen: productUpdate.imagen
+        },
+        {
+          where:[
+            {id:id}
+          ]
+        }
+      )
+      .then((result)=>{
+        return res.redirect("/index")
+      })
+  },
+  destroy:(req,res)=>{
+    let productoBorrar = req.params.id;
+    Producto.destroy(
+      {
+        where:[{id:productoBorrar}]
+      }
+    )
+    .then((result)=>{
+      return res.redirect("/index")
     }
-}
+    )
+  }
+};
   
  
  module.exports = productoController
