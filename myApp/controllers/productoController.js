@@ -3,7 +3,10 @@ const Producto = db.Producto; /* El alias que le pondre a mi modelo */
 
 let productoController = {
   producto : function(req, res) {
-    res.render('product', { });
+    res.render('product', {
+    comentarios: data.comentarios,
+    producto: data.productos
+    });
   },
   productAdd : function(req, res) {
     res.render('product-add');
