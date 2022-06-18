@@ -30,7 +30,7 @@ let perfilController = {
             contra: bcrypt.hashSync(req.body.contra, 10),
             fecha_de_nacimiento: req.body.fecha,
             nro_de_documento: req.body.nro_de_documento,
-            foto_de_perfil: req.body.foto,
+            foto_de_perfil: req.file.filename, //multer
         }
         console.log(usuarioNuevo)
         db.Usuario.create(usuarioNuevo)
