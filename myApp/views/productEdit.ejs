@@ -20,7 +20,7 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Agregar productos</h2>
+				<h2 class="products-title">Editar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
 			<div class="container products-wrapper">
@@ -29,17 +29,16 @@
 			<!-- Show the "ultimos" products -->
 			<div class="login-page">
 				<div class="form">
-				  <form class="register-form" action="/product/add" method="POST">
+				  <form class="register-form" action="/editProduct/:id" method="POST">
 					<input type="text" name="nombreProducto" placeholder="Nombre del producto"/>
 					<input type="file" name="descripcion" placeholder="descripcion"/>
 					<input type="file" name="imagen" placeholder="imagen"/>
-					<button>agregar</button>
+					<button>Editar</button>
 
 					<!-- Show the "ultimos" products -->
 					<div class="input-container ic2">
 						<input id="email" class="input" type="date" name="fecha" placeholder="Fecha Creación" />
 					  </div>
-			
 
 	<!-- footer -->
 	<%- include('./partials/footer') %> 
