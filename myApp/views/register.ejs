@@ -20,13 +20,13 @@
 			<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 			
 			<div class="form">
-				<form  action="/profile/register" method="POST"> 
+				<form  action="/profile/register" method="POST" enctype="multipart/form-data"> 
 				  <input type="text" name="email" placeholder="mail">
 				  <input type="text" name="usuario" placeholder="nombre de usuario"/>
 				  <input type="password" name="contra" placeholder="contraseña"/>
 				  <input type="date" name="fecha" placeholder="fecha de nacimiento">
 				  <input type="number" name="nro_de_documento" placeholder="nro de documento">
-				  <input type="file" name="foto" placeholder="foto de perfil">
+				  <input id="foto" type="file" name="foto" placeholder="foto de perfil">
 				  <button type="submit">Ingresar</button>
 				</form>
 		  </div>	

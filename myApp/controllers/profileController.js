@@ -23,14 +23,14 @@ let perfilController = {
         res.render('register');
     },
     procesarRegister : function(req, res) {
-        ;
+        let foto = req.file.filename;
         let usuarioNuevo = {
             email: req.body.email,
             usuario: req.body.usuario,
             contra: bcrypt.hashSync(req.body.contra, 10),
             fecha_de_nacimiento: req.body.fecha,
             nro_de_documento: req.body.nro_de_documento,
-            foto_de_perfil: req.body.foto,
+            foto_de_perfil: foto
         }
         console.log(usuarioNuevo)
         db.Usuario.create(usuarioNuevo)
