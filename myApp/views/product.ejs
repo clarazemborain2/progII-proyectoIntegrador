@@ -11,17 +11,17 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%=producto[1].nombre%></h2> 
+			<h2 class="products-title"><%=productos.nombre%></h2> 
 			<p class="product-detail-description">
-				<a href="/product/add">Editar</a>
+				<a href="/product/add/<%= productos.id %>">Editar</a>
 			</p>
 		</div>
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src=<%=producto[1].imagen%> alt="" class="product-detail-img">
+					<img src=<%=productos.imagen%> alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						<%=producto[1].descripcion%></p>
+						<%=productos.descripcion%></p>
 				</article>
 				
 				<div class="col-12 col-lg-4">
@@ -31,7 +31,7 @@
 								<img src="https://via.placeholder.com/35" alt="">
 								<div class="data">
 									<p class="user">
-									<strong> <a href="/profile"><%=comentarios[i].nombreUsuario%> </a> </strong>
+									<strong> <a href="/profile"><%=comentarios[i].usuario%> </a> </strong>
 									<%=comentarios[i].comentario%></p>
 								</div>
 							</article>

@@ -2,12 +2,23 @@ const db = require("../database/models");
 const Producto = db.Producto; /* El alias que le pondre a mi modelo */
 
 let productoController = {
-  producto : function(req, res) {
-    res.render('product', {
-    comentarios: data.comentarios,
-    producto: data.productos
+
+  show : (req, res) => {
+    let id = req.params.id;
+
+    producto.findByPk(id)
+    .then(result => {
+      return res.render("product", {
+        productos: result});
     });
+
+    comentario.findByPk(id)
+    .then(result => {
+      return res.render("product", {
+        comentarios: result});
+    })
   },
+
   productAdd : function(req, res) {
     res.render('product-add');
   },

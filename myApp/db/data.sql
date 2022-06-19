@@ -52,3 +52,7 @@ INSERT INTO producto VALUES (DEFAULT, "Cuarzo Rosa", "El cuarzo rosa trabaja la 
 INSERT INTO producto VALUES (DEFAULT, "Cuarzo Azul", "Este cristal favorece la comunicación y el habla. Posee energías calmantes, reduce el estrés y relaja", "2022-08-10", "cuarzo-azul.jpeg", 2);
 INSERT INTO producto VALUES (DEFAULT, "Amatista", "Tiene el poder de transformar la energía de baja vibración en alta vibración.", "2022-09-20", "amatista.jpg", 3);
 INSERT INTO producto VALUES (DEFAULT, "Sodalita", "Ayuda a estimular la visión interna en la meditación y la percepción. ", "2022-08-22", "soladita.jpg", 4);
+INSERT INTO comentario VALUES (DEFAULT, "Excelente producto!", 1, 1);
+INSERT INTO comentario VALUES (DEFAULT, "Este cristal me trae mucha paz", 2, 2);
+INSERT INTO comentario VALUES (DEFAULT, "Que lindas energias brindan estos cristales!", 3, 3);
+INSERT INTO comentario VALUES (DEFAULT, "Definitivamente voy a volver a comprar aca", 4, 4);
