@@ -6,17 +6,12 @@ let productoController = {
   show : (req, res) => {
     let id = req.params.id;
 
-    producto.findByPk(id)
+    Producto.findByPk(id)
     .then(result => {
       return res.render("product", {
         productos: result});
     });
 
-    comentario.findByPk(id)
-    .then(result => {
-      return res.render("product", {
-        comentarios: result});
-    })
   },
 
   productAdd : function(req, res) {

@@ -24,22 +24,7 @@
 						<%=productos.descripcion%></p>
 				</article>
 				
-				<div class="col-12 col-lg-4">
-					<% for( let i = 0; i < comentarios.length; i++ ) { %>
-						<section class="comments">
-							<article>
-								<img src="https://via.placeholder.com/35" alt="">
-								<div class="data">
-									<p class="user">
-									<strong> <a href="/profile"><%=comentarios[i].usuario%> </a> </strong>
-									<%=comentarios[i].comentario%></p>
-								</div>
-							</article>
-							
-	
-						</section>
-						<% } %>
-					
+				
 					<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
