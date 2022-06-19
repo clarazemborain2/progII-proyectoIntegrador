@@ -1,20 +1,33 @@
+const db = require("../database/models");
+const op = db.Sequelize.Op;
+
+
 let resultsController = {
-    results : function(req, res) {
-         res.render('search-results')
- },
- showOne: (req, res) => {
+
+ results: (req, res) => {
      let busqueda = req.query.producto;
-     productos.findOne({
+     productos.findAll({
          where: [
              {nombre : {
                  [op.like] : "%" + busqueda + "%"
-             }} /*op.like no funciona*/
+             }} 
          ]
      }).then((result) => {
-         return res.render('search-results'), {/*falta completar*/}
+         return res.render('search-results'), {
+             result: productos,
+             resultado: busqueda
+         }
      })
+     .catch(err =>{
+        console.log(err);
+    })
  }
 
 };
+
  
  module.exports = resultsController
+
+ //results : function(req, res) {
+    //res.render('search-results')
+//},

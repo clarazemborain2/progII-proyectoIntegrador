@@ -5,12 +5,12 @@ let perfilController = {
 
     perfil : function(req, res) {
          res.render('profile',  {
-            usuario: dataModule.usuario,
-            productos: dataModule.productos});
+            usuario: db.Usuario,
+            productos: db.Producto});
        },
     editarPerfil : function(req, res) {
         res.render('profile-edit', {
-            usuario: dataModule.usuario}
+            usuario: db.Usuario}
            );
     },
     login : function(req, res) {
@@ -27,7 +27,7 @@ let perfilController = {
         let usuarioNuevo = {
             email: req.body.email,
             usuario: req.body.usuario,
-            contra: bcrypt.hashSync(req.body.contra, 10),
+            contra: contraEncriptada,
             fecha_de_nacimiento: req.body.fecha,
             nro_de_documento: req.body.nro_de_documento,
             foto_de_perfil: foto
