@@ -17,7 +17,7 @@ let perfilController = {
         res.render('login');
     },
     procesarLogin : function(req, res) {
-
+        
     },
     register : function(req, res) {
         res.render('register');
