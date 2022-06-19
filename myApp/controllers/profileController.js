@@ -25,6 +25,7 @@ let perfilController = {
     procesarRegister : function(req, res) {
         let errors = {};//declaro variables para mostrar errores en la vista
         let errorscontra = {}
+        let contraEncriptada = bcrypt.hashSync(req.body.contra, 10);
         if(req.body.email == "") {//para cuando email este vacio
             errors.message = "El email no puede estar vacío.";
             //res.locals.error = errors;
@@ -36,7 +37,7 @@ let perfilController = {
         let usuarioNuevo = {
             email: req.body.email,
             usuario: req.body.usuario,
-            contra: bcrypt.hashSync(req.body.contra, 10),
+            contra: contraEncriptada,
             fecha_de_nacimiento: req.body.fecha,
             nro_de_documento: req.body.nro_de_documento,
             foto_de_perfil: req.file //multer

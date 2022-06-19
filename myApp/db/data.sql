@@ -48,3 +48,7 @@ INSERT INTO usuario VALUES (DEFAULT, "zoelevinson@gmail.com", "zoelevinson", "zo
 INSERT INTO usuario VALUES (DEFAULT, "anitabar@gmail.com", "anitabarbenza", "anita1234" , "2002-04-26", 44875634, "");
 INSERT INTO usuario VALUES (DEFAULT, "pilisauthier@gmail.com", "sauthier123", "pili44" , "2000-03-15", 44234889, "");
 INSERT INTO usuario VALUES (DEFAULT, "tomasruiz@gmail.com", "tomiruiz", "gym123" , "2001-01-09", 41917242, "");
+INSERT INTO producto VALUES (DEFAULT, "Cuarzo Rosa", "El cuarzo rosa trabaja la paz, el amor en todas sus formas y tu mundo emocional.", "2022-07-10", "cuarzorosa.jpg", 1 );
+INSERT INTO producto VALUES (DEFAULT, "Cuarzo Azul", "Este cristal favorece la comunicación y el habla. Posee energías calmantes, reduce el estrés y relaja", "2022-08-10", "cuarzo-azul.jpeg", 2);
+INSERT INTO producto VALUES (DEFAULT, "Amatista", "Tiene el poder de transformar la energía de baja vibración en alta vibración.", "2022-09-20", "amatista.jpg", 3);
+INSERT INTO producto VALUES (DEFAULT, "Sodalita", "Ayuda a estimular la visión interna en la meditación y la percepción. ", "2022-08-22", "soladita.jpg", 4);
