@@ -1,6 +1,22 @@
 let express = require('express');
+const path = require('path');
 let router = express.Router();
 let perfilController = require('../controllers/profileController');
+
+// trabajando con multer
+
+let multer = require('multer');
+
+let storage = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, path.join(__dirname, '../public/images/users'))
+    },
+    filename : function(req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+});
+let upload = multer({ storage : storage})
+
 
 router.get('/', perfilController.perfil);
 
@@ -10,6 +26,6 @@ router.get('/login', perfilController.login);
 router.post('/login', perfilController.procesarLogin);
 
 router.get('/register', perfilController.register); 
-router.post('/register', perfilController.procesarRegister);
+router.post('/register', upload.single('foto'), perfilController.procesarRegister);
 
 module.exports = router;
