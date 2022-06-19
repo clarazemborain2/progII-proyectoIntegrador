@@ -42,8 +42,7 @@ let productoController = {
       descripcion: result.descripcion,
       imagen: result.imagen,
       id:id
-
-        }
+    }
       return res.render('productEdit', {Producto: productoEditado})
 
 

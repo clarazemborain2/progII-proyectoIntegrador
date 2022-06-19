@@ -7,8 +7,8 @@ router.get('/id/:id', productoController.show);
 router.get('/add', productoController.productAdd);
 router.post('/add', productoController.procesarAdd);
 
-router.get('/editProduct/:id',productoController.edit);
-router.post('/editProduct/:id',productoController.update);
+router.get('/editProduct/:id', productoController.edit);
+router.post('/editProduct/:id', productoController.update);
 
 module.exports = router;
 
