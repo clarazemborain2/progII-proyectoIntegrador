@@ -1,4 +1,4 @@
-CREATE SCHEMA `data` ;
+CREATE SCHEMA data ;
 
 USE data;
 
@@ -42,3 +42,9 @@ seguido_id INT UNSIGNED NOT NULL,
 FOREIGN KEY (seguidor_id) REFERENCES usuario(id),
 FOREIGN KEY (seguido_id) REFERENCES usuario(id)
 );
+
+
+INSERT INTO usuario VALUES (DEFAULT, "zoelevinson@gmail.com", "zoelevinson", "zoe1234" , "2002-09-11", 44234568, "");
+INSERT INTO usuario VALUES (DEFAULT, "anitabar@gmail.com", "anitabarbenza", "anita1234" , "2002-04-26", 44875634, "");
+INSERT INTO usuario VALUES (DEFAULT, "pilisauthier@gmail.com", "sauthier123", "pili44" , "2000-03-15", 44234889, "");
+INSERT INTO usuario VALUES (DEFAULT, "tomasruiz@gmail.com", "tomiruiz", "gym123" , "2001-01-09", 41917242, "");
