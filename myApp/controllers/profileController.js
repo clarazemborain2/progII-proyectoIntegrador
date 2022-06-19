@@ -23,7 +23,16 @@ let perfilController = {
         res.render('register');
     },
     procesarRegister : function(req, res) {
-        
+        let errors = {};//declaro variables para mostrar errores en la vista
+        let errorscontra = {}
+        if(req.body.email == "") {//para cuando email este vacio
+            errors.message = "El email no puede estar vacío.";
+            //res.locals.error = errors;
+            return res.render('registracion'); 
+          } else if(req.body.contra.length < 2) {//para passwords con menos de 2 caracteres
+              errorscontra.message = "La contraseña debe tener al menos 3 caracteres";
+              res.locals.error = errorscontrasenia; 
+              return res.render('registracion');}
         let usuarioNuevo = {
             email: req.body.email,
             usuario: req.body.usuario,
