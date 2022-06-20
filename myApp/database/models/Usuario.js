@@ -32,5 +32,6 @@ module.exports = function(sequelize, dataTypes){
         underscore: true,
     }
     const Usuario = sequelize.define(alias, cols, config);
+
     return Usuario;
 }
