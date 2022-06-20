@@ -16,16 +16,16 @@ let productoController = {
   },
   //buscador
   search: (req, res)=> {
-    let search = req.query.producto;
+    let search = req.query.search;
    
     Producto.findAll({
-      where: [{nombre : {[op.like] : `%${search}%`}}],
-      order: [[nombre, 'DESC'],],
+      where: [{'nombre' : {[op.like] : `%${search}%`}}],
+      order: [['nombre', 'DESC'],],
       limit: 2,
 
   }).then((result) => {
-      return res.render('search-result', {
-          productos: productos,
+      return res.render('search-results', {
+          productos: result,
           resultado: search
       })
   })

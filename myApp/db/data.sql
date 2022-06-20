@@ -55,4 +55,3 @@ INSERT INTO producto VALUES (DEFAULT, "Sodalita", "Ayuda a estimular la visión 
 INSERT INTO comentario VALUES (DEFAULT, "Excelente producto!", 1, 1, "2022-03-18");
 INSERT INTO comentario VALUES (DEFAULT, "Este cristal me trae mucha paz", 2, 2, "2021-08-22");
 INSERT INTO comentario VALUES (DEFAULT, "Que lindas energias brindan estos cristales!", 3, 3, "2022-02-23");
-INSERT INTO comentario VALUES (DEFAULT, "Definitivamente voy a volver a comprar aca", 4, 4, "2021-07-05");
