@@ -24,6 +24,14 @@ app.use(session({
   saveUninitialized: true
 }))
 
+/* creando el middleware de session guardado en locals */
+app.use(function(req, res, next){
+  if(req.session.usuario != undefined){
+    res.locals.usuario = req.session.usuario 
+  }
+  return next();
+})
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

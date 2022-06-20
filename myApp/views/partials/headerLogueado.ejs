@@ -62,6 +62,8 @@
 		</div>
 	</header>
 	<!-- /Header -->
-	
+	<% if (locals.usuario != undefined) { %>
+        <p> Bienvenido, <%= usuario.usuario %> </p>
+    <% } %>
 </body>	
 </html>
