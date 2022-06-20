@@ -12,18 +12,14 @@ module.exports = function(sequelize, dataTypes){
         descripcion:{
             type: dataTypes.STRING,
         },
-        fecha_entrega: {
-            type: dataTypes.DATE
-        },
+    
         created_at: {
             type: dataTypes.DATE
         },
         imagen:{
             type: dataTypes.STRING,
         },
-        created_at:{
-            type: dataTypes.DATE,
-        }, 
+    
         usuario_id:{
             type: dataTypes.INTEGER,
         },
