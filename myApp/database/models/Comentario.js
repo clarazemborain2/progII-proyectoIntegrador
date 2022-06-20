@@ -18,9 +18,7 @@ module.exports = function(sequelize, dataTypes){
         created_at:{
             type: dataTypes.DATE,
         },
-        updated_at:{
-            type: dataTypes.DATE,
-        }
+        
     };
     let config = {
         tableName: 'comentario',

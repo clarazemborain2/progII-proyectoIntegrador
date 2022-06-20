@@ -32,7 +32,7 @@ CREATE TABLE comentario (
   comentario VARCHAR(255) NULL,
   product_id INT UNSIGNED NOT NULL, 
   usuario_id INT UNSIGNED NOT NULL,
-  created_at DATETIME,
+  created_at DATE,
   FOREIGN KEY (product_id) REFERENCES producto(id),
   FOREIGN KEY (usuario_id) REFERENCES usuario(id)
   );

@@ -12,6 +12,12 @@ module.exports = function(sequelize, dataTypes){
         descripcion:{
             type: dataTypes.STRING,
         },
+        fecha_entrega: {
+            type: dataTypes.DATE
+        },
+        created_at: {
+            type: dataTypes.DATE
+        },
         imagen:{
             type: dataTypes.STRING,
         },
@@ -21,9 +27,6 @@ module.exports = function(sequelize, dataTypes){
         usuario_id:{
             type: dataTypes.INTEGER,
         },
-        updated_at:{
-            type: dataTypes.DATE,
-        }
     }
     let config = {
         tableName: 'producto',
