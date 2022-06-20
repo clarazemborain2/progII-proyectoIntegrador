@@ -24,14 +24,7 @@ module.exports = function(sequelize, dataTypes){
         foto_de_perfil: {
             type: dataTypes.STRING
         },
-        created_at:{
-            type: dataTypes.DATE,
-        }, usuario_id:{
-            type: dataTypes.INTEGER,
-        },
-        updated_at:{
-            type: dataTypes.DATE,
-        }
+       
     };
     let config = {
         tableName: "usuario",
