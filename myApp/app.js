@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
+const db = require("./database/models");
 
 
 
@@ -16,6 +17,12 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
 /* creando el middleware de session */
 app.use(session({
@@ -32,11 +39,23 @@ app.use(function(req, res, next){
   return next();
 })
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+/* creando el middleware de session guardado en locals */
+app.use(function(req, res, next){
+  if(req.cookies.userId != undefined && req.session.usuario == undefined){
+    let idUsuario = req.cookies.userId
+
+    db.Usuario.findByPk(idUsuario)
+    .then((usuario) => {
+      req.session.usuario = usuario.dataValues;
+      res.locals.usuario = usuario.dataValues;
+      return next();
+    }).catch((err) => {
+      console.log(err);
+    });
+  } else {
+    return next();
+  }
+})
 
 app.use('/', indexRouter); 
 app.use('/product', productRouter);
