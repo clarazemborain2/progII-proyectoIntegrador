@@ -24,6 +24,8 @@ router.get('/busqueda/', productoController.search);
 router.get('/editProduct/:id', productoController.edit);
 router.post('/editProduct/:id', productoController.update);
 
+router.get('/delete/:id', productoController.destroy);
+
 
 module.exports = router;
 
