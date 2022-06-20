@@ -20,16 +20,18 @@ let productoController = {
         // empiezo a laburar con product-add
   procesarAdd : function(req,res) {
     let info = req.body; //Guardamos los datos
+    let imagen = req.file.filename;
     let productoNuevo = {//creamos el producto
-      nombre: info.nombreProducto, //los atributos que puse no son todas las columnas que hay en sql.
+      nombre: info.nombre, //los atributos que puse no son todas las columnas que hay en sql.
       descripcion: info.descripcion,
-      imagen: info.imagen
+      imagen: imagen
     }
 
     Producto.create(productoNuevo)
     .then((result) => {
-      return res.redirect("/index")
+      return res.redirect("/")
     })
+  
     },
     edit: (req, res)=>{
     let id = req.params.id;
@@ -77,7 +79,7 @@ let productoController = {
       }
     )
     .then((result)=>{
-      return res.redirect("/index")
+      return res.redirect("/")
     }
     )
   }

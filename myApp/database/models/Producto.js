@@ -15,6 +15,15 @@ module.exports = function(sequelize, dataTypes){
         imagen:{
             type: dataTypes.STRING,
         },
+        created_at:{
+            type: dataTypes.DATE,
+        }, 
+        usuario_id:{
+            type: dataTypes.INTEGER,
+        },
+        updated_at:{
+            type: dataTypes.DATE,
+        }
     }
     let config = {
         tableName: 'producto',

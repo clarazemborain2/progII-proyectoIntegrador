@@ -26,6 +26,7 @@ router.get('/login', perfilController.login); //va a llamar al metodo login que 
 router.post('/login', perfilController.procesarLogin); //de metodo post para que me procese el login del formulario
 
 router.get('/register', perfilController.register); 
-router.post('/register', upload.single('foto'), perfilController.procesarRegister);
+router.post('/register', upload.single('imagen'), perfilController.procesarRegister);
+ 
 
 module.exports = router;

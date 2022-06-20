@@ -8,10 +8,12 @@
 	<!-- /Header -->
 	<%- include('./partials/header')  %> 
 	
+	
 	<!-- Banner se muestra en css-->
 	<div class="banner">
 		 </div>
 
+		 <h1>Visita numero: <%= contador %></h1>
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
@@ -24,7 +26,7 @@
 	<section class="product-box">
 		<a href="/product/id/<%=productos[i].id%>">
 			<figure class="product-box_image">
-				<img src=<%=productos[i].imagen%>  alt="cafetera moulinex">
+				<img src="/images/products/<%=productos[i].imagen%>"  alt="cafetera moulinex">
 			</figure>
 			<article class="product-box_data">
 				<h2><%=productos[i].nombre%></h2>
