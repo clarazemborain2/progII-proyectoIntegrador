@@ -11,7 +11,7 @@ const db = require("./database/models");
 var indexRouter = require('./routes/main');
 let productRouter = require('./routes/product'); 
 let profileRouter = require('./routes/profile');
-let resultsRouter = require('./routes/results');
+//let resultsRouter = require('./routes/results');//
 var app = express();
 
 // view engine setup
@@ -59,7 +59,7 @@ app.use(function(req, res, next){
 app.use('/', indexRouter); 
 app.use('/product', productRouter);
 app.use('/profile', profileRouter);
-app.use('/results', resultsRouter);
+//app.use('/results', resultsRouter);//
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -6,19 +6,41 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/header')  %> 
+	<% if(locals.user != undefined){ %>
+        <%- include('./partials/headerLogeado') %>
+   
+    <%  } else {%>
+        <%- include('./partials/header') %>
+
+    <% } %>
+	
 	
 	<!-- /Header -->
 
-	<!-- Novedades -->
+	<!-- Resultados-->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
+			<% if(producto.length == 0){ %>
+				<h1>No se encontraron productos con el termino: <%= resultado %> </h1>
+				<%  } else {%>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="/product/id/<%=productos[i].id%>">
+								<figure class="product-box_image">
+									<img src="/images/products/<%=productos[i].imagen%>"  alt="cafetera moulinex">
+								</figure>
+								<article class="product-box_data">
+									<h2><%=producto[i].nombre%></h2>
+									<p><%=producto[i].descripcion%></p>
+								</article>
+							</a>
+						</section>
+					</div>
+
 			<h2 class="col-12"> 
-              <p>No hay resultados</p>
 			</h2>
 
 
