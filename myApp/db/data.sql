@@ -18,7 +18,6 @@ CREATE TABLE producto (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
   nombre VARCHAR(250) NOT NULL,
   descripcion VARCHAR(500) NOT NULL,
-  fecha_entrega DATE NOT NULL,
   created_at DATE NULL,
   imagen VARCHAR(400) NOT NULL,
   usuario_id INT UNSIGNED,
