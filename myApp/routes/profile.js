@@ -26,6 +26,7 @@ router.get('/login', perfilController.login);
 router.post('/login', perfilController.procesarLogin);
 
 router.get('/register', perfilController.register); 
-router.post('/register', upload.single('foto'), perfilController.procesarRegister);
+router.post('/register', upload.single('imagen'), perfilController.procesarRegister);
+ 
 
 module.exports = router;

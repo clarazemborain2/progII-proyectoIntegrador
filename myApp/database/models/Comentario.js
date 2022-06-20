@@ -15,10 +15,16 @@ module.exports = function(sequelize, dataTypes){
         usuario_id: {
             type: dataTypes.INTEGER,
         },
+        created_at:{
+            type: dataTypes.DATE,
+        },
+        updated_at:{
+            type: dataTypes.DATE,
+        }
     };
     let config = {
         tableName: 'comentario',
-        timestamps: false,
+        timestamps: true,
         underscore: true,
     };
     const Comentario = sequelize.define(alias, cols, config);

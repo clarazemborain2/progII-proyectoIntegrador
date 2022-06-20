@@ -29,8 +29,8 @@
 			<!-- Show the "ultimos" products -->
 			<div class="login-page">
 				<div class="form">
-				  <form class="register-form" action="/product/add" method="POST">
-					<input type="text" name="nombreProducto" placeholder="Nombre del producto"/>
+				  <form class="register-form" action="/product/add" method="POST" enctype="multipart/form-data"> >
+					<input type="text" name="nombre" placeholder="Nombre del producto"/>
 					<input type="text" name="descripcion" placeholder="Descripcion"/>
 					<input type="file" name="imagen" placeholder="imagen"/>
 					<button>agregar</button>
