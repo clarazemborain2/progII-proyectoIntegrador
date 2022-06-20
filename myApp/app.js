@@ -17,6 +17,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(cookieParser());
+
 /* creando el middleware de session */
 app.use(session({
   secret: 'myApp',
@@ -31,6 +33,18 @@ app.use(function(req, res, next){
   }
   return next();
 })
+
+//cookies
+app.use(function (req, res, next) {
+  if (req.cookies.usuario != undefined && req.session.usuario == undefined) {
+    db.Usuario.findByPk(req.cookies.usuario)
+      .then(user => {
+        req.session.usuario = user.email
+        res.locals.usuario = req.session.usuario
+      })
+  }
+  return next();
+}) 
 
 app.use(logger('dev'));
 app.use(express.json());
