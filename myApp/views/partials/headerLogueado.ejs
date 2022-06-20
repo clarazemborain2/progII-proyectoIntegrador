@@ -39,13 +39,15 @@
 				</ul>
 	
 				<ul class="right-navbar">
-					<li><a href="/profile">
-							<%=usuario.usuario%> <i class="fas fa-user"></i>
-						</a>
+					<li><% if(locals.usuario != undefined) { %> <a href="/profile/profile/<%= locals.usuario.id %> ">
+                        <p class="pepito"> <%= locals.usuario.usuario %> <i class="fas fa-user"></i></p>
+                    <% } %>
+                      
+                    </a>
 					</li>
 					<li>
-						<form action="/" method="post">
-							<button class="logout" type="submit" href="/profile/login">
+						<form action="/profile/logout" method="GET">
+							<button class="logout" type="submit">
 								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
 							</button>
 						</form>

@@ -20,9 +20,12 @@ let upload = multer({ storage : storage})
 
 router.get('/', perfilController.perfil);
 
+router.get('/profile/:id', upload.single('imagen') ,perfilController.show);
+router.get('/logout', perfilController.logout);
+
 router.get('/profile-edit', perfilController.editarPerfil);
 
-router.get('/login', perfilController.login); //va a llamar al metodo login que renderisa la vista
+router.get('/login', perfilController.login); //va a llamar al metodo login que renderiza la vista
 router.post('/login', perfilController.procesarLogin); //de metodo post para que me procese el login del formulario
 
 router.get('/register', perfilController.register); 
