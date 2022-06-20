@@ -1,5 +1,6 @@
 const db = require("../database/models");
 const Producto = db.Producto; /* El alias que le pondre a mi modelo */
+const op = db.Sequelize.Op;
 
 let productoController = {
 
@@ -13,7 +14,26 @@ let productoController = {
     });
 
   },
+  //buscador
+  search: (req, res)=> {
+    let search = req.query.producto;
+   
+    Producto.findAll({
+      where: [{nombre : {[op.like] : `%${search}%`}}],
+      order: [[nombre, 'DESC'],],
+      limit: 2,
 
+  }).then((result) => {
+      return res.render('search-result', {
+          productos: productos,
+          resultado: search
+      })
+  })
+  .catch(err =>{
+     console.log(err);
+ })
+  },
+//product add
   productAdd : function(req, res) {
     res.render('product-add');
   },
