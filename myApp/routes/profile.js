@@ -22,8 +22,8 @@ router.get('/', perfilController.perfil);
 
 router.get('/profile-edit', perfilController.editarPerfil);
 
-router.get('/login', perfilController.login); 
-router.post('/login', perfilController.procesarLogin);
+router.get('/login', perfilController.login); //va a llamar al metodo login que renderisa la vista
+router.post('/login', perfilController.procesarLogin); //de metodo post para que me procese el login del formulario
 
 router.get('/register', perfilController.register); 
 router.post('/register', upload.single('foto'), perfilController.procesarRegister);

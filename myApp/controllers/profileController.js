@@ -1,5 +1,6 @@
 const db = require("../database/models");
 let bcrypt = require('bcryptjs');
+const usuario = db.Usuario;
 
 let perfilController = {
 
@@ -17,19 +18,36 @@ let perfilController = {
         res.render('login');
     },
     procesarLogin : function(req, res) {
-
+        let info = req.body;
+        usuario.findOne({
+            where: [{email : info.email}]
+        }).then((result)=> { //el result me trae toda la info del usuario de db
+            if (result != null) {
+                let contraCorrecta = bcrypt.compareSync(info.password , result.password) //comparo la clave que ingreso el usuario en el formulario y la comparo con la clave que me trae el result
+                //el result.password viene hasheado 
+                if(contraCorrecta) {  
+                    return res.render("index")
+                } else {
+                    return res.send("La clave es incorrecta")
+                }
+            } else {
+                return res.send("No existe el mail " +info.email)
+            }
+        });
+            
     },
     register : function(req, res) {
         res.render('register');
     },
     procesarRegister : function(req, res) {
         let foto = req.file.filename;
+        let info = req.body;
         let usuarioNuevo = {
-            email: req.body.email,
-            usuario: req.body.usuario,
+            email: info.email,
+            usuario: info.usuario,
             contra: contraEncriptada,
-            fecha_de_nacimiento: req.body.fecha,
-            nro_de_documento: req.body.nro_de_documento,
+            fecha_de_nacimiento: info.fecha,
+            nro_de_documento: info.nro_de_documento,
             foto_de_perfil: foto
         }
         console.log(usuarioNuevo)
