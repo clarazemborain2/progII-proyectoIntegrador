@@ -5,7 +5,7 @@
 
 <body>
 	<!-- Header -->
-	<% if(locals.user != undefined){ %>
+	<% if(locals.usuario != undefined){ %>
         <%- include('./partials/headerLogeado') %>
    
     <%  } else {%>
@@ -27,7 +27,7 @@
 			<!-- Show the "ultimos" products -->
 			<div class="login-page">
 				<div class="form">
-				  <form class="register-form" action="/product/add" method="POST" enctype="multipart/form-data"> >
+				  <form class="register-form" action="/product/add" method="POST" enctype="multipart/form-data">
 					<input type="text" name="nombre" placeholder="Nombre del producto"/>
 					<input type="text" name="descripcion" placeholder="Descripcion"/>
 					<input type="file" name="imagen" placeholder="imagen"/>
