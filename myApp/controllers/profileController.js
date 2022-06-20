@@ -27,6 +27,13 @@ let perfilController = {
                 //el result.password viene hasheado 
                 if(contraCorrecta) {  
                     req.session.usuario = result.dataValues;
+
+                    /* evaluar si el checkbox esta en true o existe */
+
+                    if(req.body.recordar != undefined){
+                        res.cookie('userId', req.session.usuario.id, { maxAge: 1000 * 60 * 5 })
+                    }
+
                     console.log(req.session.usuario);
                     return res.render("index", )
                 } else {
