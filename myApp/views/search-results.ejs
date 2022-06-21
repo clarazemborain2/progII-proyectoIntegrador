@@ -30,13 +30,15 @@
 					<ul> 
 						<% for(let i =0; i<productos.length;i++) {%>
 						<li><a href="/product/<%=productos[i].id %>">
-							<img src="/images/products<%=productos[i].imagen%>" class="product-detail-img">
+							<img src="/images/products/<%=productos[i].imagen%>" class="product-detail-img">
 							<a class="products-title"><%=productos[i].nombre%></a></li>
 							<p class="product-detail-description">
 								<%=productos[i].descripcion%></p>
 						<% } %>  
 				</ul>
-				</article>
+
+	
+
 					<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
