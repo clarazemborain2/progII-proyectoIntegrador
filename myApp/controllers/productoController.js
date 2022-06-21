@@ -35,27 +35,6 @@ let productoController = {
      console.log(err);
  })
   },
-//buscador por descripcion
-search: (req, res)=> {
-  let search = req.query.search;
- 
-  Producto.findAll({
-    where: [{'descripcion': {[op.like]: `%${search}%`}}
-  ],
-    order: [['nombre', 'DESC'],],
-    limit: 2,
-
-}).then((result) => {
-    return res.render('search-results', {
-        productos: result,
-        resultado: search
-    })
-})
-.catch(err =>{
-   console.log(err);
-})
-},
-
 
 
 //product add
@@ -90,7 +69,7 @@ search: (req, res)=> {
       imagen: result.imagen,
       id:id
     }
-      return res.render('productEdit', {Producto: productoEditado})
+      return res.render('productEdit', {productos: productoEditado})
 
 
 
@@ -102,7 +81,7 @@ search: (req, res)=> {
       let id = req.params.id;
       Producto.update(
         {
-            nombre: productUpdate.nombreProducto,
+            nombre: productUpdate.nombre,
             descripcion: productUpdate.descripcion,
             imagen: productUpdate.imagen
         },
@@ -117,10 +96,10 @@ search: (req, res)=> {
       })
   },
   destroy:(req,res)=>{
-    let productoBorrar = req.params.id;
+    let id = req.params.id;
     Producto.destroy(
       {
-        where:[{id:productoBorrar}]
+        where:[{id:id}]
       }
     )
     .then((result)=>{
@@ -129,64 +108,7 @@ search: (req, res)=> {
     )
   },
 
-  // Trabajando con agregar comentario
-  comentarioAdd : function(req, res) {
-    res.render('product-add');
-  },
-        // empiezo a laburar con product-add
-  procesarAdd : function(req,res) {
-    let info = req.body; //Guardamos los datos
-    let imagen = req.file.filename;
-    let productoNuevo = {//creamos el producto
-      nombre: info.nombre, //los atributos que puse no son todas las columnas que hay en sql.
-      descripcion: info.descripcion,
-      imagen: imagen
-    }
-
-    Producto.create(productoNuevo)
-    .then((result) => {
-      return res.redirect("/")
-    })
   
-    },
-    edit: (req, res)=>{
-    let id = req.params.id;
-    Producto.findByPk(id)
-    .then(
-      (result)=>{
-        let productoEditado={
-
-      nombre: result.nombre,
-      descripcion: result.descripcion,
-      imagen: result.imagen,
-      id:id
-    }
-      return res.render('productEdit', {Producto: productoEditado})
-
-
-
-       }
-    )
-    },
-    update: (req,res)=>{
-      let productUpdate = req.body;
-      let id = req.params.id;
-      Producto.update(
-        {
-            nombre: productUpdate.nombreProducto,
-            descripcion: productUpdate.descripcion,
-            imagen: productUpdate.imagen
-        },
-        {
-          where:[
-            {id:id}
-          ]
-        }
-      )
-      .then((result)=>{
-        return res.redirect("/index")
-      })
-  },
 };
   
  

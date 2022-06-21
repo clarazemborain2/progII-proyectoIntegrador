@@ -1,33 +1,27 @@
 /*const db = require("../database/models");
+const Producto = db.Producto; 
 const op = db.Sequelize.Op;
 
 
+//buscador por descripcion
 let resultsController = {
-
- results: (req, res) => {
-     let busqueda = req.query.producto;
-     productos.findAll({
-         where: [
-             {nombre : {
-                 [op.like] : "%" + busqueda + "%"
-             }} 
-         ]
-     }).then((result) => {
-         return res.render('search-results'), {
-             result: productos,
-             resultado: busqueda
-         }
-     })
-     .catch(err =>{
-        console.log(err);
-    })
- }
-
-};
-
+search: (req, res)=> {
+  let search = req.query.search;
  
- module.exports = resultsController
+  Producto.findAll({
+    where: [{'descripcion': {[op.like]: `%${search}%`}}
+  ],
+    limit: 2,
 
- //results : function(req, res) {
-    //res.render('search-results')
-//} */
+}).then((result) => {
+    return res.render('search-results', {
+        productos: result,
+        resultado: search
+    })
+})
+.catch(err =>{
+   console.log(err);
+})
+},
+}
+module.exports = resultsController; */
