@@ -10,40 +10,51 @@ let perfilController = {
             productos: db.Producto});
        },
 
-    indexEditar: function(req, res, next) {
-        let id = req.params.id; 
-        if(req.session.usuario != undefined){
-            usuario.findByPk(id)
-            .then(usuario =>{
-                return res.render('profile-edit', {usuario: usuario});
-            })  
-        } else {
-            res.redirect("/profile/login")
+    indexEditar: (req, res)=>{
+        let id = req.params.id;
+        usuario.findByPk(id)
+        .then(
+          (result)=>{
+            let perfilEditado={
+          email: result.email,
+          usuario: result.usuario,
+          contra: result.contra,
+          fecha_de_nacimiento: result.fecha_de_nacimiento,
+          nro_de_documento: result.nro_de_documento,
+          foto_de_perfil: result.imagen,
+          id:id
         }
+          return res.render('profile-edit', {usuario: perfilEditado})
+    
+    
+    
+           }
+        )
         },
 
-    editarPerfil : function(req,res){
-        let info = req.body;
+    editarPerfil : (req,res)=>{
+        let perfilUpdate = req.body;
+        let id = req.params.id;
         let foto = req.file.filename;
-        let id = req.params.id; 
-        let contraEncriptada = bcrypt.hashSync(info.contra, 10)
-        usuario.update({
-            email: info.email,
-            usuario: info.usuario,
+        let contraEncriptada = bcrypt.hashSync(perfilUpdate.contra, 10);
+        usuario.update(
+          {
+            email: perfilUpdate.email,
+            usuario: perfilUpdate.usuario,
             contra: contraEncriptada,
-            fecha_de_nacimiento: info.fecha_de_nacimiento,
-            nro_de_documento: info.nro_de_documento,
+            fecha_de_nacimiento: perfilUpdate.fecha_de_nacimiento,
+            nro_de_documento: perfilUpdate.nro_de_documento,
             foto_de_perfil: foto
-        }, 
-        {where: [{
-                id:id
-            }]
-        }).then(res.redirect('/profile'))
-        .catch(error =>{
-            console.log(
-                error
-            );
-            res.send(error)
+
+          },
+          {
+            where:[
+              {id:id}
+            ]
+          }
+        )
+        .then((result)=>{
+          return res.redirect("/profile")
         })
     },
 
