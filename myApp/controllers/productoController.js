@@ -19,12 +19,12 @@ let productoController = {
     let search = req.query.search;
    
   Producto.findAll({
-      where: [{'nombre' : {[op.like] : `%${search}%`}},
+      where: [{nombre : {[op.like] : `%${search}%`}},
       //{'descripcion': {[op.like]: `%${search}%` }}//
 
     ],
       order: [['nombre', 'DESC'],],
-      limit: 2,
+      limit: 3,
 
   })
   
