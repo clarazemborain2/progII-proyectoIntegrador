@@ -15,15 +15,16 @@ let storage = multer.diskStorage({
 });
 let upload = multer({ storage : storage})
 
+//get
 router.get('/id/:id', upload.single('imagen'), productoController.show);
-router.get('/add', productoController.productAdd);
-router.post('/add', upload.single('imagen'), productoController.procesarAdd);
-
 router.get('/busqueda/', productoController.search);
-
+router.get('/add', productoController.productAdd);
 router.get('/editProduct/:id', productoController.edit);
-router.post('/editProduct/:id', productoController.update);
 
+
+//post
+router.post('/editProduct/:id', productoController.update);
+router.post('/add', upload.single('imagen'), productoController.procesarAdd);
 router.get('/delete/:id', productoController.destroy);
 
 

@@ -35,6 +35,29 @@ let productoController = {
      console.log(err);
  })
   },
+//buscador por descripcion
+search: (req, res)=> {
+  let search = req.query.search;
+ 
+  Producto.findAll({
+    where: [{'descripcion': {[op.like]: `%${search}%`}}
+  ],
+    order: [['nombre', 'DESC'],],
+    limit: 2,
+
+}).then((result) => {
+    return res.render('search-results', {
+        productos: result,
+        resultado: search
+    })
+})
+.catch(err =>{
+   console.log(err);
+})
+},
+
+
+
 //product add
   productAdd : function(req, res) {
     res.render('product-add');
