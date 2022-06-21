@@ -83,11 +83,12 @@ let productoController = {
     update: (req,res)=>{
       let productUpdate = req.body;
       let id = req.params.id;
+      let foto = req.file.filename;
       Producto.update(
         {
             nombre: productUpdate.nombre,
             descripcion: productUpdate.descripcion,
-            imagen: productUpdate.imagen
+            imagen: foto
         },
         {
           where:[
