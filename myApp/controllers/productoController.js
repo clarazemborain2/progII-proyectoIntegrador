@@ -20,17 +20,21 @@ let productoController = {
    
     Producto.findAll({
       where: [{'nombre' : {[op.like] : `%${search}%`}},
-              //{'descripcion': {[op.like]: `%${search}%`}}//
+      //{'descripcion': {[op.like]: `%${search}%` }}//
+
     ],
       order: [['nombre', 'DESC'],],
       limit: 2,
 
-  }).then((result) => {
+  })
+  
+  .then((result) => {
       return res.render('search-results', {
           productos: result,
           resultado: search
       })
   })
+
   .catch(err =>{
      console.log(err);
  })
