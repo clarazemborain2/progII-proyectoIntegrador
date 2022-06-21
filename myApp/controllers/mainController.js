@@ -13,7 +13,9 @@ let mainController = {
 
     req.session.contador = counter;
 
-        Producto.findAll()
+        Producto.findAll({
+          order: [['created_at', 'DESC'],]
+        })
         .then(result=>{
           console.log(result);
           return res.render('index', {
