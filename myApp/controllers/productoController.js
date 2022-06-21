@@ -18,30 +18,23 @@ let productoController = {
   search: (req, res)=> {
     let search = req.query.search;
    
-    let porNombre= Producto.findAll({
+    Producto.findAll({
       where: [{'nombre' : {[op.like] : `%${search}%`}},
+      //{'descripcion': {[op.like]: `%${search}%` }}//
               
     ],
       order: [['nombre', 'DESC'],],
       limit: 2,
 
   })
-  /*let descripcion = Producto.findAll({
-    where: [{'descripcion' : {[op.like] : `%${search}%`}},
-              
-    ],
-      order: [['descripcion', 'DESC'],],
-      limit: 2,
-  }
-
-  ) */
+  
   .then((result) => {
       return res.render('search-results', {
           productos: result,
           resultado: search
       })
   })
-  //Promise.all([porNombre, descripcion])//
+
   .catch(err =>{
      console.log(err);
  })
