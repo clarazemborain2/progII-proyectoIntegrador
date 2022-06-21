@@ -113,7 +113,7 @@ search: (req, res)=> {
         }
       )
       .then((result)=>{
-        return res.redirect("/index")
+        return res.redirect("/")
       })
   },
   destroy:(req,res)=>{
