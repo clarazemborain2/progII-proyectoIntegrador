@@ -27,13 +27,14 @@
 		<div class="row">
 		
 			<!-- Show the "ultimos" products -->
-			<div class="login-page">
 				<div class="form">
-				  <form class="register-form" action="/editProduct/:id" method="POST">
-					<input type="text" name="nombreProducto" placeholder="Nombre del producto"/>
-					<input type="text" name="descripcion" placeholder="Descripcion"/>
-					<input type="file" name="imagen" placeholder="imagen"/>
+				  <form class="register-form" action="/product/editProduct/<%=productos.id%>" method="POST" enctype="multipart/form-data">
+					<input type="text" name="nombre" placeholder="Nombre del producto" value="<%=productos.nombre%>"/>
+					<input type="text" name="descripcion" placeholder="Descripcion" value="<%=productos.descripcion%>"/>
+					<input type="file" name="imagen" placeholder="imagen" value="<%=productos.imagen%>"/>
 					<button>Editar</button>
+				</form>
+				</div>
 
 					<!-- Show the "ultimos" products -->
 				

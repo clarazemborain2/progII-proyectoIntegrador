@@ -23,7 +23,7 @@ router.get('/editProduct/:id', productoController.edit);
 
 
 //post
-router.post('/editProduct/:id', productoController.update);
+router.post('/editProduct/:id', upload.single('imagen'), productoController.update);
 router.post('/add', upload.single('imagen'), productoController.procesarAdd);
 router.get('/delete/:id', productoController.destroy);
 
