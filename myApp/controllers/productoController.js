@@ -18,7 +18,7 @@ let productoController = {
   search: (req, res)=> {
     let search = req.query.search;
    
-    Producto.findAll({
+  Producto.findAll({
       where: [{'nombre' : {[op.like] : `%${search}%`}},
       //{'descripcion': {[op.like]: `%${search}%` }}//
 
@@ -28,13 +28,14 @@ let productoController = {
 
   })
   
+  
   .then((result) => {
       return res.render('search-results', {
           productos: result,
           resultado: search
       })
   })
-
+  
   .catch(err =>{
      console.log(err);
  })
