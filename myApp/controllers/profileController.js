@@ -9,11 +9,44 @@ let perfilController = {
             usuario: db.Usuario,
             productos: db.Producto});
        },
-    editarPerfil : function(req, res) {
-        res.render('profile-edit', {
-            usuario: db.Usuario}
-           );
+
+    indexEditar: function(req, res, next) {
+        let id = req.params.id; 
+        if(req.session.usuario != undefined){
+            usuario.findByPk(id)
+            .then(usuario =>{
+                return res.render('profile-edit', {usuario: usuario});
+            })  
+        } else {
+            res.redirect("/profile/login")
+        }
+        },
+
+    editarPerfil : function(req,res){
+        let info = req.body;
+        let foto = req.file.filename;
+        let id = req.params.id; 
+        let contraEncriptada = bcrypt.hashSync(info.contra, 10)
+        usuario.update({
+            email: info.email,
+            usuario: info.usuario,
+            contra: contraEncriptada,
+            fecha_de_nacimiento: info.fecha_de_nacimiento,
+            nro_de_documento: info.nro_de_documento,
+            foto_de_perfil: foto
+        }, 
+        {where: [{
+                id:id
+            }]
+        }).then(res.redirect('/profile'))
+        .catch(error =>{
+            console.log(
+                error
+            );
+            res.send(error)
+        })
     },
+
     login : function(req, res) {
         return res.render('login');
     },

@@ -30,10 +30,13 @@
 					
 					<div class="form">
 						
-						  <form action="/profile/:id" method="POST">
-							<input type="text" placeholder="nuevo nombre"/>
-							<input type="password" placeholder="nueva contraseña"/>
-							<input type="text" placeholder="nuevo email"/>
+						  <form action="/profile/profile-edit/<%= usuario.id %>" method="POST" enctype="multipart/form-data">
+							<input type="text" name="email" placeholder="nuevo mail">
+				            <input type="text" name="usuario" placeholder="nuevo nombre"/>
+				            <input type="password" name="contra" placeholder="nueva contraseña"/>
+				            <input type="date" name="fecha_de_nacimiento" placeholder="nueva fecha de nacimiento">
+				            <input type="number" name="nro_de_documento" placeholder="nuevo nro de documento">
+			                <input id="foto" type="file" name="imagen" placeholder="nueva foto de perfil">
 							<button>guardar cambios</button>
 							</form>
 							</div>
