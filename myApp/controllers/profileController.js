@@ -109,9 +109,12 @@ let perfilController = {
     show: (req,res) => {
         let id = req.params.id; 
        
-        usuario.findByPk(id)
+        usuario.findByPk(id, {
+            include: [{association: 'producto'}]
+        })
         .then(result=>{
-            return res.render("profile", {usuario: result});
+            console.log(result);
+            return res.render("profile", {usuario: result, productos: result.dataValues});
         })
     },
 
