@@ -61,7 +61,7 @@ let productoController = {
       nombre: info.nombre, //los atributos que puse no son todas las columnas que hay en sql.
       descripcion: info.descripcion,
       imagen: imagen,
-      usuario_id: req.session.usuario.id
+      usuario_id: req.session.user.id
     }
 
     Producto.create(productoNuevo)

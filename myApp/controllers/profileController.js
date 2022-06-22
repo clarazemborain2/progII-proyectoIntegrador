@@ -41,7 +41,7 @@ let perfilController = {
                 let contraCorrecta = bcrypt.compareSync(info.contra , result.contra) //comparo la clave que ingreso el usuario en el formulario y la comparo con la clave que me trae el result
                 //el result.contra viene hasheado 
                 if(contraCorrecta) {  
-                    req.session.user = result.dataValues; //datos del registro de la tabla
+                    req.session.user = result.dataValues; //session.user variable que muestra los resultados de usario
 
                     /* evaluar si el checkbox esta en true o existe */
 
