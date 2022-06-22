@@ -32,10 +32,10 @@
 					<p class="product-detail-description">
 						<%=productos.descripcion%></p>
 						<p class="product-detail-description">Cargado por usuario: 
-							<a href="/profile/id/<%=productos[i].usuario_id %>"><%=productos[i].usuario.usuario%></a></p>	
+							<a href="/profile/id/<%=productos.usuario_id %>"><%=productos.usuario.usuario%></a></p>	
 				</article>
 				
-				<% if( != undefined){ %>
+				<% if(locals.user != undefined){ %>
 					<form class="form" action="/product/addComment" method="GET" enctype="multipart/form-data" >
 						<input class="form-input" name="comentario"  type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
