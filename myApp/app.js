@@ -32,21 +32,21 @@ app.use(session({
 
 /* creando el middleware de session guardado en locals */
 app.use(function(req, res, next){
-  if(req.session.usuario != undefined){
-    res.locals.usuario = req.session.usuario 
+  if(req.session.user != undefined){
+    res.locals.user = req.session.user 
   }
   return next();
 })
 
-/* creando el middleware de cookies */
+/* creando el middleware de cookies .*/
 app.use(function(req, res, next){
-  if(req.cookies.userId != undefined && req.session.usuario == undefined){
+  if(req.cookies.userId != undefined && req.session.user == undefined){
     let idUsuario = req.cookies.userId
 
     db.Usuario.findByPk(idUsuario)
     .then((usuario) => {
-      req.session.usuario = usuario.dataValues;
-      res.locals.usuario = usuario.dataValues;
+      req.session.user = usuario.dataValues;
+      res.locals.user = usuario.dataValues;
       return next();
     }).catch((err) => {
       console.log(err);

@@ -49,7 +49,7 @@ let perfilController = {
                         res.cookie('userId', req.session.user.id, { maxAge: 1000 * 60 * 5 })
                     }
 
-                    console.log(req.session.usuario);
+                    console.log(req.session.user);
                     return res.redirect("/profile/id/" + req.session.user.id)
                     
                 } else {
@@ -61,7 +61,7 @@ let perfilController = {
     },
     indexEditar: function(req, res) {
         let id = req.params.id; 
-        if(req.session.usuario != undefined){
+        if(req.session.user != undefined){
             usuario.findByPk(id)
             .then(usuario =>{
                 return res.render('profile-edit', {usuario: usuario});
