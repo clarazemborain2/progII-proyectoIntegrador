@@ -14,20 +14,22 @@ let productoController = {
     });
 
   },
-  //buscador
+  //buscador por nombre o descripcion 
   search: (req, res)=> {
     let search = req.query.search;
    
   Producto.findAll({
-      where: [{nombre : {[op.like] : `%${search}%`}},
-      //{'descripcion': {[op.like]: `%${search}%` }}//
+      where: {
+        [op.or]: [
+            {nombre : {
+            [op.like] : `%${search}%`}},
+          {descripcion: {[op.like]: `%${search}%` }}
 
-    ],
+    ]},
       order: [['nombre', 'DESC'],],
       limit: 3,
 
   })
-  
   
   .then((result) => {
       return res.render('search-results', {

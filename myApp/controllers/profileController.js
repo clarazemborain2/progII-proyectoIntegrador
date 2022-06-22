@@ -74,11 +74,9 @@ let perfilController = {
                     return res.render("profile", {usuario: result})
                     
                 } else {
-                    return res.send("La clave es incorrecta")
+                    return res.render("La clave es incorrecta")
                 }
-            } else {
-                return res.send("No existe el mail " + info.email)
-            }
+            } 
         });
             
     },
