@@ -28,6 +28,7 @@ let productoController = {
     ]},
       order: [['nombre', 'DESC'],],
       limit: 3,
+      include: [{association: 'usuario'}]
 
   })
   

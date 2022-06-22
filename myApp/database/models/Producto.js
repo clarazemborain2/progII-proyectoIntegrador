@@ -33,7 +33,7 @@ module.exports = function(sequelize, dataTypes){
 
     Producto.associate = function(models){
         Producto.belongsTo(models.Usuario,{
-            as: 'usuario',
+            as: 'usuario', //alias que desoues uso en associate
             foreignKey: 'usuario_id'
         });
     }
