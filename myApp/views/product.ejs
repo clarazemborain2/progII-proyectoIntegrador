@@ -34,15 +34,20 @@
 				</article>
 				
 				<% if(locals.usuario != undefined){ %>
-					<form class="form" action="/product/addComment" method="GET" enctype="multipart/form-data" >
-						<input class="form-input" name="comentario"  type="text" value="" placeholder="Agregar comentario">
+					<article>
+						<img src="" alt="">
+						<div>
+							<p>
+								<strong><a href=""></a></strong>
+								
+							</p>
+						</div>
+					</article>
+					<form class="form" action="/product/id/<%=productos.id%>" method="POST">
+						<input class="form-input" type="text" name="comentario" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-						
-						<ul>
-							<li>hola</li>
-						</ul>
 					</form> 
-			   
+					
 				<%  } else {%>
 					<div>
 					 <a href="/profile/login" class="buy-now-button" >LOGUEATE PARA COMENTAR!</a>

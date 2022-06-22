@@ -6,12 +6,15 @@ let productoController = {
 
   show : (req, res) => {
     let id = req.params.id;
-
-    Producto.findByPk(id)
+    req.session.product = req.params.id
+    Producto.findByPk(id, {include: [{association: 'comentario'}]})
     .then(result => {
+      console.log(result)
       return res.render("product", {
         productos: result});
     });
+
+
 
   },
   //buscador
