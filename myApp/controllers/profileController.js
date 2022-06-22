@@ -66,7 +66,7 @@ let perfilController = {
                     /* evaluar si el checkbox esta en true o existe */
 
                     if(req.body.recordar != undefined){
-                        res.cookie('userId', result.dataValues.id, { maxAge: 1000 * 60 * 5 })
+                        res.cookie('userId', req.session.usuario.id, { maxAge: 1000 * 60 * 5 })
                     }
 
                     console.log(req.session.usuario);

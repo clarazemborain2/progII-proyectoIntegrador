@@ -33,16 +33,16 @@ module.exports = function(sequelize, dataTypes){
     }
     const Usuario = sequelize.define(alias, cols, config);
 
-    /*Usuario.associate = function(models){
+    Usuario.associate = function(models){
         Usuario.hasMany(models.Producto,{
             as: 'producto',
             foreignKey: 'usuario_id'
         });
-        Usuario.belongsTo(models.Comentario, {
+        Usuario.hasMany(models.Comentario, {
             as: 'comentario',
             foreignKey: 'usuario_id',
         })
-    }*/
+    }
 
     return Usuario;
 }

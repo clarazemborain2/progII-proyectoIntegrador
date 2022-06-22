@@ -38,7 +38,7 @@ app.use(function(req, res, next){
   return next();
 })
 
-/* creando el middleware de session guardado en locals */
+/* creando el middleware de cookies */
 app.use(function(req, res, next){
   if(req.cookies.userId != undefined && req.session.usuario == undefined){
     let idUsuario = req.cookies.userId
