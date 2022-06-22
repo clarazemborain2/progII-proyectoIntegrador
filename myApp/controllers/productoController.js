@@ -19,12 +19,12 @@ let productoController = {
     let search = req.query.search;
    
   Producto.findAll({
-      where: [{'nombre' : {[op.like] : `%${search}%`}},
+      where: [{nombre : {[op.like] : `%${search}%`}},
       //{'descripcion': {[op.like]: `%${search}%` }}//
 
     ],
       order: [['nombre', 'DESC'],],
-      limit: 2,
+      limit: 3,
 
   })
   
@@ -84,11 +84,12 @@ let productoController = {
     update: (req,res)=>{
       let productUpdate = req.body;
       let id = req.params.id;
+      let foto = req.file.filename;
       Producto.update(
         {
             nombre: productUpdate.nombre,
             descripcion: productUpdate.descripcion,
-            imagen: productUpdate.imagen
+            imagen: foto
         },
         {
           where:[

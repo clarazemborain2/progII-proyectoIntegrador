@@ -29,8 +29,8 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<ul> 
 						<% for(let i =0; i<productos.length;i++) {%>
-						<li><a href="/product/<%=productos[i].id %>">
-							<a class="products-title"><%=productos[i].nombre%></a></li>
+						<li>
+							<a href="/product/id/<%=productos[i].id %>" class="products-title"><%=productos[i].nombre%></a></li>
 							<img src="/images/products/<%=productos[i].imagen%>" class="product-detail-img">
 							<p class="product-detail-description">
 								<%=productos[i].descripcion%></p>
@@ -43,7 +43,7 @@
 				</div>
 			</div>
 		</div>
-		<% } %>
+		<% } %> 
 	</div>
 	<!-- /product detail -->
 
