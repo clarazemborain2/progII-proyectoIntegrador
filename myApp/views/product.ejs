@@ -31,6 +31,8 @@
 					<img src="/images/products/<%=productos.imagen%>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
 						<%=productos.descripcion%></p>
+						<p class="product-detail-description">Cargado por usuario: 
+							<a href="/profile/id/<%=productos[i].usuario_id %>"><%=productos[i].usuario.usuario%></a></p>	
 				</article>
 				
 				<% if(locals.usuario != undefined){ %>

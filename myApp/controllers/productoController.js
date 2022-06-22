@@ -7,10 +7,14 @@ let productoController = {
   show : (req, res) => {
     let id = req.params.id;
 
-    Producto.findByPk(id)
+    Producto.findByPk(id, {
+      include: [{association: 'usuario'}]
+    })
+    
     .then(result => {
       return res.render("product", {
         productos: result});
+        
     });
 
   },
@@ -27,7 +31,7 @@ let productoController = {
 
     ]},
       order: [['nombre', 'DESC'],],
-      limit: 3,
+      limit: 10,
       include: [{association: 'usuario'}]
 
   })
