@@ -14,7 +14,8 @@ let Comentario = db.Comentario
     let comentarioNuevo = {//creamos el comentario
      comentario: info.comentario,
      usuario_id : usuario_id,
-     product_id : producto_id
+     product_id : producto_id,
+     created_at : new Date()
     }
     Comentario.create(comentarioNuevo)
     .then((result) => {

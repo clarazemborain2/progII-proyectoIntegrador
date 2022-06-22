@@ -19,10 +19,11 @@
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%=productos.nombre%></h2> 
+			<% if(locals.user != undefined){ %>
 			<p class="product-detail-description">
 				<a href="/product/editProduct/<%=productos.id%>">Editar</a>
 				<a href="/product/delete/<%=productos.id%>">- Eliminar</a>
-				
+				<% } %>
 			</p>
 		</div>
 		<div class="product-detail">
@@ -34,30 +35,31 @@
 						<p class="product-detail-description">Cargado por usuario: 
 							<a href="/profile/id/<%=productos.usuario_id %>"><%=productos.usuario.usuario%></a></p>	
 				</article>
-				
-				<% if(locals.user != undefined){ %>
-					<% for (let i = 0; i < comentarios.length; i++) { %>
-					<article>
-						<img src="" alt="">
+				<section class="comments">
+					<% if(locals.user != undefined){ %>
+						<% for (let i = 0; i < comentarios.length; i++) { %>
+						<article>
+							
+							<div>
+								<p>
+									<img src="/images/users/<%= comentarios[i].dataValues.relacionUsuario.foto_de_perifl %>" alt="">
+									<strong> <a href="/profile/id/<%= comentarios[i].dataValues.usuario_id %>"> <%= comentarios[i].dataValues.relacionUsuario.dataValues.usuario %> </a> </strong>
+									<%= comentarios[i].comentario %>
+								</p>
+							</div>
+						</article>
+						<% } %>
+						<form class="form" action="/product/id/<%=productos.id%>" method="POST">
+							<input class="form-input" type="text" name="comentario" placeholder="Agregar comentario">
+							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						</form> 
+						
+					<%  } else {%>
 						<div>
-							<p>
-								<strong><a href=""></a></strong>
-								
-							</p>
+						 <a href="/profile/login" class="buy-now-button" >LOGUEATE PARA COMENTAR!</a>
 						</div>
-					</article>
 					<% } %>
-					<form class="form" action="/product/id/<%=productos.id%>" method="POST">
-						<input class="form-input" type="text" name="comentario" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form> 
-					
-				<%  } else {%>
-					<div>
-					 <a href="/profile/login" class="buy-now-button" >LOGUEATE PARA COMENTAR!</a>
-					</div>
-				<% } %>
-				
+				</section>
 					<hr>
 				
 				</div>

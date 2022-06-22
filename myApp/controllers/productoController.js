@@ -1,23 +1,30 @@
 const db = require("../database/models");
 const Producto = db.Producto; /* El alias que le pondre a mi modelo */
+const Comentario = db.Comentario
 const op = db.Sequelize.Op;
 
 let productoController = {
 
   show : (req, res) => {
-    let id = req.params.id;
+
+   let product = Producto.findByPk(req.params.id, {include: [{association: 'usuario'}]})
+   let comentarios = Comentario.findAll({where: {product_id: req.params.id}, include:[{association:'relacionUsuario'}], order:[['created_at','DESC']]})
+
+   Promise.all([product, comentarios])
+   .then(result =>{
+    res.render('product',{productos: result[0], comentarios: result[1]})
+   })
+
+    /*let id = req.params.id;
     req.session.product = req.params.id
-    Producto.findByPk(id, {include:[{association: 'usuario'}, {association: 'comentario'}, {nested: true} ]})
+    Producto.findByPk(id, {include:[{association: 'usuario'}, {association: 'comentario', nested: true} ]})
     
     .then(result => {
-      console.log(result)
+      console.log(result.dataValues.comentario)
       return res.render("product", {
-        productos: result});
+        productos: result, comentarios: result.dataValues.comentario});
         
-    });
-
-
-
+    });*/
   },
   //buscador por nombre o descripcion 
   search: (req, res)=> {

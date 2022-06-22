@@ -53,7 +53,7 @@ let perfilController = {
                     return res.redirect("/profile/id/" + req.session.user.id)
                     
                 } else {
-                    return res.render("La clave es incorrecta")
+                    return res.send("La clave es incorrecta")
                 }
             } 
         });
