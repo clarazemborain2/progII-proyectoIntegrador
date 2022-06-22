@@ -5,7 +5,7 @@
 
 <body>
 	<!-- Header -->
-	<% if(locals.usuario != undefined){ %>
+	<% if(locals.user != undefined){ %>
         <%- include('./partials/headerLogueado') %>
    
     <%  } else {%>
@@ -35,7 +35,7 @@
 							<a href="/profile/id/<%=productos[i].usuario_id %>"><%=productos[i].usuario.usuario%></a></p>	
 				</article>
 				
-				<% if(locals.usuario != undefined){ %>
+				<% if( != undefined){ %>
 					<form class="form" action="/product/addComment" method="GET" enctype="multipart/form-data" >
 						<input class="form-input" name="comentario"  type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
