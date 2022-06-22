@@ -2,6 +2,7 @@ let express = require('express');
 let router = express.Router();
 const path = require('path');
 let productoController = require('../controllers/productoController');
+let comentarioController = require('../controllers/comentarioController');
 
 let multer = require('multer');
 
@@ -20,12 +21,13 @@ router.get('/id/:id', upload.single('imagen'), productoController.show);
 router.get('/busqueda/', productoController.search);
 router.get('/add', productoController.productAdd);
 router.get('/editProduct/:id', productoController.edit);
-
+router.get('/delete/:id', productoController.destroy);
+router.get('/addComment/:id', comentarioController.procesarComment);
 
 //post
 router.post('/editProduct/:id', upload.single('imagen'), productoController.update);
 router.post('/add', upload.single('imagen'), productoController.procesarAdd);
-router.get('/delete/:id', productoController.destroy);
+
 
 
 module.exports = router;
