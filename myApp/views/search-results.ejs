@@ -29,8 +29,8 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<ul> 
 						<% for(let i =0; i<productos.length;i++) {%>
-						<li><a href="/product/<%=productos[i].id %>">
-							<a class="products-title"><%=productos[i].nombre%></a></li>
+						<li>
+							<a href="/product/id/<%=productos[i].id %>" class="products-title"><%=productos[i].nombre%></a></li>
 							<img src="/images/products/<%=productos[i].imagen%>" class="product-detail-img">
 							<p class="product-detail-description">
 								<%=productos[i].descripcion%></p>
@@ -39,15 +39,11 @@
 						<% } %>  
 					</ul>
 				</article>
-					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
 				
 				</div>
 			</div>
 		</div>
-		<% } %>
+		<% } %> 
 	</div>
 	<!-- /product detail -->
 

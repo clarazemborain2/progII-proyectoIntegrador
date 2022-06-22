@@ -114,7 +114,6 @@ let productoController = {
     )
   },
 
-  
 };
   
  

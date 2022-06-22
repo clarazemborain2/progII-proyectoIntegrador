@@ -34,9 +34,13 @@
 				</article>
 				
 				<% if(locals.usuario != undefined){ %>
-					<form class="form" action="" method="POST" enctype="multipart/form-data" >
-						<input class="form-input" name="comentario" type="text" value="" placeholder="Agregar comentario">
+					<form class="form" action="/product/addComment" method="GET" enctype="multipart/form-data" >
+						<input class="form-input" name="comentario"  type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						
+						<ul>
+							<li>hola</li>
+						</ul>
 					</form> 
 			   
 				<%  } else {%>
@@ -44,8 +48,9 @@
 					 <a href="/profile/login" class="buy-now-button" >LOGUEATE PARA COMENTAR!</a>
 					</div>
 				<% } %>
-					
+				
 					<hr>
+				
 				</div>
 			</div>
 		</div>
