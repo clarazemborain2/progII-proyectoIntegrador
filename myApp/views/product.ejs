@@ -5,7 +5,7 @@
 
 <body>
 	<!-- Header -->
-	<% if(locals.usuario != undefined){ %>
+	<% if(locals.user != undefined){ %>
         <%- include('./partials/headerLogueado') %>
    
     <%  } else {%>
@@ -31,9 +31,11 @@
 					<img src="/images/products/<%=productos.imagen%>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
 						<%=productos.descripcion%></p>
+						<p class="product-detail-description">Cargado por usuario: 
+							<a href="/profile/id/<%=productos.usuario_id %>"><%=productos.usuario.usuario%></a></p>	
 				</article>
 				
-				<% if(locals.usuario != undefined){ %>
+				<% if(locals.user != undefined){ %>
 					<article>
 						<img src="" alt="">
 						<div>

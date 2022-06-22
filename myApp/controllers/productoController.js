@@ -7,30 +7,35 @@ let productoController = {
   show : (req, res) => {
     let id = req.params.id;
     req.session.product = req.params.id
-    Producto.findByPk(id, {include: [{association: 'comentario'}]})
+    Producto.findByPk(id, {include: [{association: 'comentario'}, {association: 'usuario'} ]})
+    
     .then(result => {
       console.log(result)
       return res.render("product", {
         productos: result});
+        
     });
 
 
 
   },
-  //buscador
+  //buscador por nombre o descripcion 
   search: (req, res)=> {
     let search = req.query.search;
    
   Producto.findAll({
-      where: [{nombre : {[op.like] : `%${search}%`}},
-      //{'descripcion': {[op.like]: `%${search}%` }}//
+      where: {
+        [op.or]: [
+            {nombre : {
+            [op.like] : `%${search}%`}},
+          {descripcion: {[op.like]: `%${search}%` }}
 
-    ],
+    ]},
       order: [['nombre', 'DESC'],],
-      limit: 3,
+      limit: 10,
+      include: [{association: 'usuario'}]
 
   })
-  
   
   .then((result) => {
       return res.render('search-results', {
@@ -56,7 +61,8 @@ let productoController = {
     let productoNuevo = {//creamos el producto
       nombre: info.nombre, //los atributos que puse no son todas las columnas que hay en sql.
       descripcion: info.descripcion,
-      imagen: imagen
+      imagen: imagen,
+      usuario_id: req.session.usuario.id
     }
 
     Producto.create(productoNuevo)
