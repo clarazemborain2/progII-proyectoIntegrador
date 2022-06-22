@@ -18,7 +18,7 @@ let storage = multer.diskStorage({
 let upload = multer({ storage : storage})
 
 
-router.get('/', perfilController.perfil);
+
 
 router.get('/id/:id', upload.single('imagen') ,perfilController.show);
 router.get('/logout', perfilController.logout);
