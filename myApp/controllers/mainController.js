@@ -14,7 +14,8 @@ let mainController = {
     req.session.contador = counter;
 
         Producto.findAll({
-          order: [['created_at', 'DESC'],]
+          order: [['created_at', 'DESC']],
+          include: [{association: 'usuario'}]
         })
         .then(result=>{
           console.log(result);

@@ -44,13 +44,13 @@ FOREIGN KEY (seguido_id) REFERENCES usuario(id)
 );
 
 
-INSERT INTO usuario VALUES (DEFAULT, "zoelevinson@gmail.com", "zoelevinson", "zoe1234" , "2002-09-11", 44234568, "");
-INSERT INTO usuario VALUES (DEFAULT, "anitabar@gmail.com", "anitabarbenza", "anita1234" , "2002-04-26", 44875634, "");
-INSERT INTO usuario VALUES (DEFAULT, "pilisauthier@gmail.com", "sauthier123", "pili44" , "2000-03-15", 44234889, "");
-INSERT INTO usuario VALUES (DEFAULT, "tomasruiz@gmail.com", "tomiruiz", "gym123" , "2001-01-09", 41917242, "");
+INSERT INTO usuario VALUES (DEFAULT, "zoelevinson@gmail.com", "zoelevinson", "zoe1234" , "2002-09-11", 44234568, "fotoperfil1.jpeg");
+INSERT INTO usuario VALUES (DEFAULT, "anitabar@gmail.com", "anitabarbenza", "anita1234" , "2002-04-26", 44875634, "fotoperfil2.jpeg");
+INSERT INTO usuario VALUES (DEFAULT, "pilisauthier@gmail.com", "sauthier123", "pili44" , "2000-03-15", 44234889, "fotoperfil3.jpeg");
+INSERT INTO usuario VALUES (DEFAULT, "tomasruiz@gmail.com", "tomiruiz", "gym123" , "2001-01-09", 41917242, "fotoperfil4.jpeg");
 INSERT INTO producto VALUES (DEFAULT, "Cuarzo Azul", "Este cristal favorece la comunicación y el habla. Posee energías calmantes, reduce el estrés y relaja","2021-10-11", "cuarzo-azul.jpeg", 2);
 INSERT INTO producto VALUES (DEFAULT, "Amatista", "Tiene el poder de transformar la energía de baja vibración en alta vibración.","2022-03-15", "amatista.jpg", 3);
 INSERT INTO producto VALUES (DEFAULT, "Sodalita", "Ayuda a estimular la visión interna en la meditación y la percepción.", "2022-02-11", "sodalita.jpg", 4);
-INSERT INTO comentario VALUES (DEFAULT, "Excelente producto!", 1, 1);
-INSERT INTO comentario VALUES (DEFAULT, "Este cristal me trae mucha paz", 2, 2);
-INSERT INTO comentario VALUES (DEFAULT, "Que lindas energias brindan estos cristales!", 3, 3);
+INSERT INTO comentario VALUES (DEFAULT, "Excelente producto!", 1, 1, "2022-03-18");
+INSERT INTO comentario VALUES (DEFAULT, "Este cristal me trae mucha paz", 2, 2, "2021-08-22");
+INSERT INTO comentario VALUES (DEFAULT, "Que lindas energias brindan estos cristales!", 3, 3, "2022-02-23");

@@ -18,7 +18,7 @@ let upload = multer({ storage : storage})
 
 //get
 router.get('/id/:id', upload.single('imagen'), productoController.show);
-router.get('/busqueda/', productoController.search);
+router.get('/busqueda', productoController.search); 
 router.get('/add', productoController.productAdd);
 router.get('/editProduct/:id', productoController.edit);
 router.get('/delete/:id', productoController.destroy);

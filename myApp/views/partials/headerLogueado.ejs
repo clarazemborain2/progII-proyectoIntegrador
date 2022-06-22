@@ -14,9 +14,10 @@
 				</div>
 	
 				<div class="col-7 col-md-6">
-					<form action="" method="GET" class="search-form">
-						<input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
-						<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+					<form action="/product/busqueda" method="GET" class="search-form">
+						<input type="text" name="search" placeholder="Busca tus cristales por nombre o por sus propiedades!"
+							class="search-form_input">
+						<button type="submit" class="search-form_button">Buscar</button>
 					</form>
 				</div>
 	
@@ -39,8 +40,13 @@
 				</ul>
 	
 				<ul class="right-navbar">
+<<<<<<< HEAD
 					<li><% if(locals.usuario != undefined) { %> <a href="/profile/id/<%= locals.usuario.id %> ">
                         <p class="pepito"> <%= locals.usuario.usuario %> <i class="fas fa-user"></i></p>
+=======
+					<li><% if(locals.user != undefined) { %> <a href="/profile/profile/<%= locals.user.id %> ">
+                        <p class="pepito"> <%= locals.user.usuario %> <i class="fas fa-user"></i></p>
+>>>>>>> 0723ea5e1befde0a5faadb7ee11755211edb07e6
                     <% } %>
                       
                     </a>
@@ -64,8 +70,8 @@
 		</div>
 	</header>
 	<!-- /Header -->
-	<% if (locals.usuario != undefined) { %>
-        <h1> Bienvenido, <%= usuario.usuario %> </h1>
+	<% if (locals.user != undefined) { %>
+        <h1> Bienvenido, <%= locals.user.usuario %> </h1>
     <% } %>
 </body>	
 </html>
