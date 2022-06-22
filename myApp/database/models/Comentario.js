@@ -28,11 +28,11 @@ module.exports = function(sequelize, dataTypes){
     const Comentario = sequelize.define(alias, cols, config);
 
     Comentario.associate = function(models){
-        Comentario.hasMany(models.Producto, {
+        Comentario.belongsTo(models.Producto, {
             as: 'relacionProducto',
             foreignKey: 'product_id',
         }),
-        Comentario.hasMany(models.Usuario, {
+        Comentario.belongsTo(models.Usuario, {
             as: 'relacionUsuario',
             foreignKey: 'usuario_id',
         })
