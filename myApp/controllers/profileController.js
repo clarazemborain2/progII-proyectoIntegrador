@@ -53,15 +53,16 @@ let perfilController = {
         return res.render('login');
     },
     procesarLogin : function(req, res) {
+        let error = {};
         let info = req.body;
         usuario.findOne({
             where: [{email : info.email}]
         }).then((result)=> { //el result me trae toda la info del usuario de db
             if (result != null) {
                 let contraCorrecta = bcrypt.compareSync(info.contra , result.contra) //comparo la clave que ingreso el usuario en el formulario y la comparo con la clave que me trae el result
-                //el result.password viene hasheado 
+                //el result.contra viene hasheado 
                 if(contraCorrecta) {  
-                    req.session.usuario = result.dataValues;
+                    req.session.usuario = result.dataValues; //datos del registro de la tabla
 
                     /* evaluar si el checkbox esta en true o existe */
 
@@ -76,7 +77,7 @@ let perfilController = {
                     return res.send("La clave es incorrecta")
                 }
             } else {
-                return res.send("No existe el mail " +info.email)
+                return res.send("No existe el mail " + info.email)
             }
         });
             
