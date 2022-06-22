@@ -18,7 +18,7 @@ let Comentario = db.Comentario
     }
     Comentario.create(comentarioNuevo)
     .then((result) => {
-      return res.redirect("/product/id/<%=productos[i].id%>" + req.params.id)
+      return res.redirect("/product/id/" + req.params.id)
     })
 
     },

@@ -7,7 +7,7 @@ let productoController = {
   show : (req, res) => {
     let id = req.params.id;
     req.session.product = req.params.id
-    Producto.findByPk(id, {include: [{association: 'comentario'}, {association: 'usuario'} ]})
+    Producto.findByPk(id, {include:[{association: 'usuario'}, {association: 'comentario'}, {nested: true} ]})
     
     .then(result => {
       console.log(result)
@@ -62,7 +62,7 @@ let productoController = {
       nombre: info.nombre, //los atributos que puse no son todas las columnas que hay en sql.
       descripcion: info.descripcion,
       imagen: imagen,
-      usuario_id: req.session.usuario.id
+      usuario_id: req.session.user.id
     }
 
     Producto.create(productoNuevo)

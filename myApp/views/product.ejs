@@ -36,6 +36,7 @@
 				</article>
 				
 				<% if(locals.user != undefined){ %>
+					<% for (let i = 0; i < comentarios.length; i++) { %>
 					<article>
 						<img src="" alt="">
 						<div>
@@ -45,6 +46,7 @@
 							</p>
 						</div>
 					</article>
+					<% } %>
 					<form class="form" action="/product/id/<%=productos.id%>" method="POST">
 						<input class="form-input" type="text" name="comentario" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
