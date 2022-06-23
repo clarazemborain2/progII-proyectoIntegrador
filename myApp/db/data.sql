@@ -18,7 +18,7 @@ CREATE TABLE producto (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
   nombre VARCHAR(250) NOT NULL,
   descripcion VARCHAR(500) NOT NULL,
-  created_at DATE NULL,
+  created_at DATE,
   imagen VARCHAR(400) NOT NULL,
   usuario_id INT UNSIGNED,
   FOREIGN KEY (usuario_id) REFERENCES usuario(id)
@@ -31,7 +31,7 @@ CREATE TABLE comentario (
   comentario VARCHAR(255) NULL,
   product_id INT UNSIGNED NOT NULL, 
   usuario_id INT UNSIGNED NOT NULL,
-  created_at DATE NULL,
+  created_at DATE,
   FOREIGN KEY (product_id) REFERENCES producto(id),
   FOREIGN KEY (usuario_id) REFERENCES usuario(id)
   );
