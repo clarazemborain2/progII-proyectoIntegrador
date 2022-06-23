@@ -8,10 +8,29 @@ let perfilController = {
         res.render('register');
     },
     procesarRegister : function(req, res) {
-        let foto = req.file.filename;
         let info = req.body;
-        let contraEncriptada = bcrypt.hashSync(info.contra, 10)
-        let usuarioNuevo = {
+        /*validaciones del form*/
+        let errors = {};
+
+        if(info.usuario == ""){
+            errors.message = "El input de usuario esta vacio";
+            res.locals.errors = errors;
+            return res.render('register')
+
+        } else if (info.email == ""){
+            errors.message = "El input de email esta vacio";
+            res.locals.errors = errors;
+            return res.render('register')
+
+        }  else if (info.contra == ""){
+            errors.message = "El input de password esta vacio";
+            res.locals.errors = errors;
+            return res.render('register')
+        
+        }  else {
+            let foto = req.file.filename;
+            let contraEncriptada = bcrypt.hashSync(info.contra, 10)
+            let usuarioNuevo = {
             email: info.email,
             usuario: info.usuario,
             contra: contraEncriptada,
@@ -25,6 +44,8 @@ let perfilController = {
             return res.redirect('/profile/login')
         })
         .catch((err) => console.log(err))
+
+        }
        
     },   
 
@@ -32,31 +53,53 @@ let perfilController = {
         return res.render('login');
     },
     procesarLogin : function(req, res) {
-        let error = {};
         let info = req.body;
-        usuario.findOne({
-            where: [{email : info.email}]
-        }).then((result)=> { //el result me trae toda la info del usuario de db
-            if (result != null) {
-                let contraCorrecta = bcrypt.compareSync(info.contra , result.contra) //comparo la clave que ingreso el usuario en el formulario y la comparo con la clave que me trae el result
-                //el result.contra viene hasheado 
-                if(contraCorrecta) {  
-                    req.session.user = result.dataValues; //session.user variable que muestra los resultados de usario
+        let errors = {};
+        
+        if(info.email == ""){
+            errors.message = "El input de email esta vacio";
+            res.locals.errors = errors;
+            return res.render('login')
 
-                    /* evaluar si el checkbox esta en true o existe */
-
-                    if(req.body.recordar != undefined){
-                        res.cookie('userId', req.session.user.id, { maxAge: 1000 * 60 * 5 })
+        } else if (info.contra == ""){
+            errors.message = "El input de contraseña esta vacio";
+            res.locals.errors = errors;
+            return res.render('login')
+            
+        } else {
+            usuario.findOne({
+                where: [{email : info.email}]
+            }).then((result)=> { //el result me trae toda la info del usuario de db
+                if (result != null) {
+                    let contraCorrecta = bcrypt.compareSync(info.contra , result.contra) //comparo la clave que ingreso el usuario en el formulario y la comparo con la clave que me trae el result
+                    //el result.contra viene hasheado 
+                    if(contraCorrecta) {  
+                        req.session.user = result.dataValues; //session.user variable que muestra los resultados de usario
+    
+                        /* evaluar si el checkbox esta en true o existe */
+    
+                        if(req.body.recordar != undefined){
+                            res.cookie('userId', req.session.user.id, { maxAge: 1000 * 60 * 5 })
+                        }
+    
+                        console.log(req.session.user);
+                        return res.redirect("/profile/id/" + req.session.user.id)
+                        
+                    } else {
+                        errors.message = "La clave es incorrecta"
+                        res.locals.errors = errors;
+                        return res.render('login')
                     }
-
-                    console.log(req.session.user);
-                    return res.redirect("/profile/id/" + req.session.user.id)
                     
-                } else {
-                    return res.send("La clave es incorrecta")
-                }
-            } 
-        });
+                } else{
+                    errors.message = "No existe el email " + info.email
+                    res.locals.errors = errors;
+                    return res.render('login')
+                } 
+            });
+        }
+
+       
             
     },
     indexEditar: function(req, res) {

@@ -6,6 +6,7 @@
 <body>
 	<!-- Header -->
 <%- include('./partials/header')  %> 
+
 	
 	<!-- /Header -->
 
@@ -15,11 +16,16 @@
 			<div class="col-12">
 				<h2 class="products-title">Registrate</h2>
 			</div>
+
+		
 			<!-- Show the "ultimos" products -->
 			<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
 			<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 			
 			<div class="form">
+				<% if (locals.errors) { %>
+					<p style="color: red; font-size: 13px;"><%= locals.errors.message %> </p>
+				<% } %>
 				<form  action="/profile/register" method="POST" enctype="multipart/form-data"> 
 				  <input type="text" name="email" placeholder="mail">
 				  <input type="text" name="usuario" placeholder="nombre de usuario"/>
