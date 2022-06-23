@@ -31,7 +31,7 @@ module.exports = function(sequelize, dataTypes){
             as: 'relacionProducto',
             foreignKey: 'product_id',
         }),
-        Comentario.belongsTo(models.Usuario, {
+        Comentario.hasMany(models.Usuario, {
             as: 'relacionUsuario',
             foreignKey: 'usuario_id',
         })
